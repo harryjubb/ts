@@ -15,9 +15,15 @@ export class TSTextShotComponent implements OnInit {
   textShot: Object = {
     'text': '',
     'styles': {
-      'font-family': 'Arial'
+      'font-family': 'Helvetica',
+      'font-size': '24pt',
       'color': 'black',
-      'background-color': '#eee'
+      'background-color': '#eee',
+      'background-image': 'none',
+      'font-weight': 'normal',
+      'font-style': 'normal',
+      'text-decoration': 'none',
+      'text-align': 'left'
     }
   };
   textShotIsGenerated: boolean = false;
@@ -62,6 +68,19 @@ export class TSTextShotComponent implements OnInit {
 
   }
 
+  regenerateTextShotImage () {
+
+    this.textShotIsGenerated = false;
+    var base = this;
+
+    // MANUAL DEBOUNCE DELAY
+    // A BIT HACKY(!)
+    window.setTimeout(function () {
+      base.generateTextShotImage();
+    }, 100);
+
+  }
+
   generateTextShotImage () {
 
     this.textShotIsGenerated = false;
@@ -73,23 +92,32 @@ export class TSTextShotComponent implements OnInit {
     // JUST IN CASE
     // CATCH ANY CASE WHERE THERE'S NO TEXT
     if (this.textShot.text.trim() === '') {
+      console.log('Empty text');
       return;
     }
 
     var base = this;
 
     // GENERATE IMAGE
-    html2canvas(document.getElementById('textshot-div'), {
-        onrendered: function(canvas) {
+    html2canvas(document.getElementById('textshot-div'), {})
+                .then( function (canvas) {
 
-            // CANVAS IS THE FINAL RENDERED <CANVAS> ELEMENT
-            base.previewText= "TEXTSHOT GENERATED!";
-            base.textShotPNGUrl = canvas.toDataURL(); // PNG BY DEFAULT
-            base.textShotPNGOctetUrl = base.textShotPNGUrl.replace(/^data:image\/[^;]/, 'data:application/octet-stream');
-            base.textShotIsGenerated = true;
+                  console.log(canvas);
 
-        }
-    });
+                  // CANVAS IS THE FINAL RENDERED <CANVAS> ELEMENT
+                  base.previewText= "TEXTSHOT GENERATED!";
+                  base.textShotPNGUrl = canvas.toDataURL(); // PNG BY DEFAULT
+                  base.textShotPNGOctetUrl = base.textShotPNGUrl.replace(/^data:image\/[^;]/, 'data:application/octet-stream');
+
+                  // console.log('Got canvas');
+                  base.textShotIsGenerated = true;
+
+                  // RE-RUN IF IMAGE GENERATION FAILED DUE TO RACE CONDITION
+                  if (base.textShotPNGUrl === 'data:,') {
+                    base.regenerateTextShotImage();
+                  }
+
+                });
 
   }
 
@@ -98,6 +126,32 @@ export class TSTextShotComponent implements OnInit {
     var url = this.textShotPNGUrl.replace(/^data:image\/[^;]/, 'data:application/octet-stream');
     // var url = this.textShotPNGUrl;
     window.open(url);
+  }
+
+  // 'font-family': 'Helvetica',
+  // 'font-size': '24pt',
+  // 'color': 'black',
+  // 'background-color': '#eee',
+  // 'background-image': 'none',
+  // 'font-weight': 'normal',
+  // 'font-style': 'normal',
+  // 'text-decoration': 'none'
+  // 'text-align': 'left'
+
+  toggleBold () {
+    this.textShot.styles['font-weight'] = this.textShot.styles['font-weight'] === 'normal' ? 'bold' : 'normal';
+  }
+
+  toggleItalic () {
+    this.textShot.styles['font-style'] = this.textShot.styles['font-style'] === 'normal' ? 'italic' : 'normal';
+  }
+
+  toggleUnderline () {
+    this.textShot.styles['text-decoration'] = this.textShot.styles['text-decoration'] === 'none' ? 'underline' : 'none';
+  }
+
+  setTextAlignment (alignment: string) {
+    this.textShot.styles['text-align'] = alignment;
   }
 
 }

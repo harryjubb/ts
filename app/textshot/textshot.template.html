@@ -6,38 +6,38 @@
   <div class="btn-toolbar" role="toolbar" aria-label="" class="text-center">
 
     <!-- FONT FACE, SIZE, AND COLOR -->
-    <div class="btn-group" role="group" aria-label="">
+    <div class="btn-group style-toolbar-btn-group" role="group" aria-label="">
       <button type="button" class="btn btn-default">Arial <i class="fa fa-caret-down" aria-hidden="true"></i></button>
-      <button type="button" class="btn btn-default">14 <i class="fa fa-caret-down" aria-hidden="true"></i></button>
+      <button type="button" class="btn btn-default">{{ textShot.styles['font-size'].replace('pt', '') }} <i class="fa fa-caret-down" aria-hidden="true"></i></button>
       <!-- <button type="button" class="btn btn-default"><i class="fa fa-font" aria-hidden="true"></i> <i class="fa fa-caret-down" aria-hidden="true"></i></button> -->
-      <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-text-color" aria-hidden="true"> <i class="fa fa-caret-down" aria-hidden="true"></i></span></button> <!--  <i class="fa fa-caret-down" aria-hidden="true"></i> -->
-      <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-text-background" aria-hidden="true"> <i class="fa fa-caret-down" aria-hidden="true"></i></span></button> <!--  <i class="fa fa-caret-down" aria-hidden="true"></i> -->
+      <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-text-color" [ngStyle]="{color: textShot.styles.color}" aria-hidden="true"> <i class="fa fa-caret-down" style='color: black;' aria-hidden="true"></i></span></button> <!--  <i class="fa fa-caret-down" aria-hidden="true"></i> -->
+      <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-text-background" [ngStyle]="{color: textShot.styles['background-color']}" aria-hidden="true"> <i class="fa fa-caret-down" style='color: black;' aria-hidden="true"></i></span></button> <!--  <i class="fa fa-caret-down" aria-hidden="true"></i> -->
     </div>
 
     <!-- FONT STROKE/STROKE COLOR -->
-    <div class="btn-group" role="group" aria-label="Text Stroke">
-      <button type="button" class="btn btn-default"><i class="fa fa-paint-brush" aria-hidden="true"></i><span class="glyphicon glyphicon-text-size" aria-hidden="true"></span> <i class="fa fa-caret-down" aria-hidden="true"></i></button>
+    <!-- <div class="btn-group style-toolbar-btn-group" role="group" aria-label="Text Stroke">
+      <button type="button" class="btn btn-default"><i class="fa fa-paint-brush" aria-hidden="true"></i> <i class="fa fa-caret-down" aria-hidden="true"></i></button>
       <button type="button" class="btn btn-default"><i class="fa fa-paint-brush" aria-hidden="true"></i><span class="glyphicon glyphicon-text-color" aria-hidden="true"></span> <i class="fa fa-caret-down" aria-hidden="true"></i></button>
-    </div>
+    </div> -->
 
     <!-- FONT WEIGHT/EMPHASIS -->
-    <div class="btn-group" role="group" aria-label="Text Decoration">
-      <button type="button" class="btn btn-default"><i class="fa fa-bold" aria-hidden="true"></i></button>
-      <button type="button" class="btn btn-default"><i class="fa fa-italic" aria-hidden="true"></i></button>
-      <button type="button" class="btn btn-default"><i class="fa fa-underline" aria-hidden="true"></i></button>
-      <button type="button" class="btn btn-default"><i class="fa fa-strikethrough" aria-hidden="true"></i></button>
+    <div class="btn-group style-toolbar-btn-group" role="group" aria-label="Text Decoration">
+      <button (click)="toggleBold() ; regenerateTextShotImage()" [ngClass]="{active: textShot.styles['font-weight'] === 'bold'}" type="button" class="btn btn-default"><i class="fa fa-bold" aria-hidden="true"></i></button>
+      <button (click)="toggleItalic() ; regenerateTextShotImage()" [ngClass]="{active: textShot.styles['font-style'] === 'italic'}" type="button" class="btn btn-default"><i class="fa fa-italic" aria-hidden="true"></i></button>
+      <button (click)="toggleUnderline() ; regenerateTextShotImage()" [ngClass]="{active: textShot.styles['text-decoration'] === 'underline'}" type="button" class="btn btn-default"><i class="fa fa-underline" aria-hidden="true"></i></button>
+      <!-- <button (click)="toggleBold() ; regenerateTextShotImage()" type="button" class="btn btn-default"><i class="fa fa-strikethrough" aria-hidden="true"></i></button> -->
     </div>
 
     <!-- TEXT ALIGNMENT -->
-    <div class="btn-group" role="group" aria-label="Text Alignment">
-      <button type="button" class="btn btn-default"><i class="fa fa-align-left" aria-hidden="true"></i></button>
-      <button type="button" class="btn btn-default"><i class="fa fa-align-center" aria-hidden="true"></i></button>
-      <button type="button" class="btn btn-default"><i class="fa fa-align-right" aria-hidden="true"></i></button>
-      <button type="button" class="btn btn-default"><i class="fa fa-align-justify" aria-hidden="true"></i></button>
+    <div class="btn-group style-toolbar-btn-group" role="group" aria-label="Text Alignment">
+      <button (click)="setTextAlignment('left') ; regenerateTextShotImage()" [ngClass]="{active: textShot.styles['text-align'] === 'left'}" type="button" class="btn btn-default"><i class="fa fa-align-left" aria-hidden="true"></i></button>
+      <button (click)="setTextAlignment('center') ; regenerateTextShotImage()" [ngClass]="{active: textShot.styles['text-align'] === 'center'}" type="button" class="btn btn-default"><i class="fa fa-align-center" aria-hidden="true"></i></button>
+      <button (click)="setTextAlignment('right') ; regenerateTextShotImage()" [ngClass]="{active: textShot.styles['text-align'] === 'right'}" type="button" class="btn btn-default"><i class="fa fa-align-right" aria-hidden="true"></i></button>
+      <button (click)="setTextAlignment('justify') ; regenerateTextShotImage()" [ngClass]="{active: textShot.styles['text-align'] === 'justify'}" type="button" class="btn btn-default"><i class="fa fa-align-justify" aria-hidden="true"></i></button>
     </div>
 
     <!-- SAVE DEFAULTS -->
-    <div class="btn-group" role="group" aria-label="Save Defaults">
+    <div class="btn-group style-toolbar-btn-group" role="group" aria-label="Save Defaults">
       <button type="button" class="btn btn-success"><span class="glyphicon glyphicon-save-file" aria-hidden="true"></span> Save Settings</button>
     </div>
 
@@ -62,7 +62,7 @@
   <br />
 
   <!-- TEXTSHOT PREVIEW DIV -->
-  <div class="textshot-preview-container" *ngIf="!textShotIsGenerated">
+  <div class="textshot-preview-container" [ngClass]="{'hidden': textShotIsGenerated}">
     <div id="textshot-div" class="textshot-preview" [ngStyle]="textShot.styles">
       {{ textShotTextArea.value }}
     </div>
