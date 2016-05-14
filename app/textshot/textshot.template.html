@@ -1,8 +1,13 @@
 <!-- TEXTSHOT TEXT INPUT -->
-<textarea class="form-control textshot-textarea" placeholder="Type or paste text here..." rows="5">
+<textarea class="form-control textshot-textarea" placeholder="Type or paste text here..." rows="5" [ngFormControl]="textShotInputControl" #textShotTextArea>
 </textarea>
 
-<!-- TEXTSHOT PREVIEW -->
-<div class="textshot-preview">
+<br />
+<br />
 
+<!-- TEXTSHOT PREVIEW -->
+<div *ngIf="textShotTextArea.value">
+  <div class="textshot-preview">
+    {{ textShotTextArea.value }}
+  </div>
 </div>

@@ -12,11 +12,21 @@ body {
   font-size: 8em;
 }
 
+.tagline {
+  font-size: 1.75em;
+}
+
 .textshot-textarea {
   font-size: 3rem;
   resize: none;
 }
 
+$textshot-font-size: 3rem;
+$textshot-padding-base: .5rem;
+
 .textshot-preview {
-  min-height: 300px;
+  background-color: #dedede;
+  font-size: $textshot-font-size;
+  min-height: $textshot-font-size * 9;
+  padding: $textshot-padding-base;
 }
