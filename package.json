@@ -35,10 +35,5 @@
         "surge": "^0.18.0",
         "typescript": "^1.8.10",
         "typings": "^0.8.1"
-    },
-    "git": {
-        "scripts": {
-            "pre-push": "surge ."
-        }
     }
 }
