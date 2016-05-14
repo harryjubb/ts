@@ -16,7 +16,7 @@
 
   <!-- TEXTSHOT PREVIEW DIV -->
   <div class="textshot-preview-container" *ngIf="!textShotIsGenerated">
-    <div id="textshot-div" class="textshot-preview">
+    <div id="textshot-div" class="textshot-preview" [ngStyle]="textShot.style">
       {{ textShotTextArea.value }}
     </div>
   </div>

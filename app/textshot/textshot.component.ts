@@ -4,6 +4,7 @@ import { Control } from '@angular/common';
 import { Observable } from 'rxjs/Observable';
 
 import { DeviceTypeDetectService } from '../services/device-type-detection.service';
+// import { TwitterService } from '../services/twitter.service';
 
 @Component({
   selector: 'ts-textshot',
@@ -12,7 +13,12 @@ import { DeviceTypeDetectService } from '../services/device-type-detection.servi
 export class TSTextShotComponent implements OnInit {
 
   textShotInputControl = new Control();
-  textShotText: string = "";
+  textShot: Object = {
+    'text': '',
+    'style': {
+      'background-color': '#DE84C9'
+    }
+  };
   textShotIsGenerated: boolean = false;
   textShotPNGUrl: string = "";
   textShotPNGOctetUrl: string = "";
@@ -22,9 +28,16 @@ export class TSTextShotComponent implements OnInit {
   onMobile: boolean = false;
 
   constructor (
-    private _device: DeviceTypeDetectService
+    private _device: DeviceTypeDetectService //,
+    // private _twitter: TwitterService
   ) {
     this.onMobile = this._device.device.is_mobile;
+
+    // var _token = this._twitter.requestToken()
+    //                           .subscribe(token => console.log(token));
+    //
+    // console.log(_token);
+
   }
 
   ngOnInit () {
@@ -38,10 +51,10 @@ export class TSTextShotComponent implements OnInit {
                           this.textShotIsGenerated = false;
 
                           if (text !== "") {
-                            this.textShotText = text;
+                            this.textShot.text = text;
                             this.generateTextShotImage();
                           } else {
-                            this.textShotText = "";
+                            this.textShot.text = "";
                           }
 
                         });
@@ -57,7 +70,7 @@ export class TSTextShotComponent implements OnInit {
 
   generateTextShotImage () {
 
-    console.log('Changed to ' + this.textShotText);
+    console.log('Changed to ' + this.textShot.text);
 
     this.previewText = "GENERATING IMAGE...";
 
@@ -66,43 +79,11 @@ export class TSTextShotComponent implements OnInit {
     // GENERATE IMAGE
     html2canvas(document.getElementById('textshot-div'), {
         onrendered: function(canvas) {
+
             // CANVAS IS THE FINAL RENDERED <CANVAS> ELEMENT
             base.previewText= "TEXTSHOT GENERATED!";
             base.textShotPNGUrl = canvas.toDataURL(); // PNG BY DEFAULT
             base.textShotPNGOctetUrl = base.textShotPNGUrl.replace(/^data:image\/[^;]/, 'data:application/octet-stream');
-
-            // MAKE DOWNLOAD BLOB
-            // CURRENTLY DOESN'T WORK
-            // SEE http://stackoverflow.com/questions/10473932/browser-html-force-download-of-image-from-src-dataimage-jpegbase64
-
-            // var imageData = atob(base.textShotPNGUrl.split(',')[1]);
-            // // Use typed arrays to convert the binary data to a Blob
-            // var arrayBuffer = new ArrayBuffer(imageData.length);
-            // var view = new Uint8Array(arrayBuffer);
-            // for (var i=0; i<imageData.length; i++) {
-            //     view[i] = imageData.charCodeAt(i) & 0xff;
-            // }
-            //
-            // var blob: Blob;
-            //
-            // try {
-            //     // This is the recommended method:
-            //     blob = new Blob([arrayBuffer], {type: 'application/octet-stream'});
-            // } catch (e) {
-            //     // The BlobBuilder API has been deprecated in favour of Blob, but older
-            //     // browsers don't know about the Blob constructor
-            //     // IE10 also supports BlobBuilder, but since the `Blob` constructor
-            //     //  also works, there's no need to add `MSBlobBuilder`.
-            //     var bb = new (window.WebKitBlobBuilder || window.MozBlobBuilder);
-            //     bb.append(arrayBuffer);
-            //     blob = bb.getBlob('application/octet-stream'); // <-- Here's the Blob
-            // }
-            //
-            // // Use the URL object to create a temporary URL
-            // var blobUrl = (window.webkitURL || window.URL).createObjectURL(blob);
-            // console.log(blobUrl);
-            // base.textShotPNGBlobUrl = blobUrl;
-
             base.textShotIsGenerated = true;
 
         }
