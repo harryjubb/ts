@@ -5,3 +5,4 @@ app/**/*.js.map
 app/*.js
 app/*.js.map
 typings
+jspm_packages
