@@ -9,3 +9,4 @@ jspm_packages
 .DS_Store
 app/.DS_Store
 app/*/.DS_Store
+app/*/*.DS_Store

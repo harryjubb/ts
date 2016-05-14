@@ -14,4 +14,14 @@ import { TSTextShotComponent } from './textshot/textshot.component';
     DeviceTypeDetectService
   ]
 })
-export class TSAppComponent { }
+export class TSAppComponent {
+
+  isMobile: boolean = false;
+
+  constructor (
+    private _device: DeviceTypeDetectService
+  ) {
+    this.isMobile = _device.device.is_mobile;
+  }
+
+}
