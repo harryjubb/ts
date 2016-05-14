@@ -24,7 +24,14 @@ export class TSTextShotComponent implements OnInit {
     this.textShotInputControl.valueChanges
                         .debounceTime(1000)
                         .distinctUntilChanged()
-                        .subscribe(text => { console.log('Changed to ' + text) ; this.testText = text; });
+                        .subscribe(text => { this.textShotText = text ; this.generateTextShotImage() ; });
+
+  }
+
+  generateTextShotImage () {
+
+    console.log('Changed to ' + this.textShotText);
+    this.testText = this.textShotText;
 
   }
 
