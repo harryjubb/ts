@@ -4,6 +4,8 @@ app/**/*.js
 app/**/*.js.map
 app/*.js
 app/*.js.map
+other_modules/*/*.js
+other_modules/*/*.js.map
 typings
 jspm_packages
 .DS_Store
