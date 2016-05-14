@@ -1,6 +1,8 @@
 // OVERRIDE BOOTSTRAP SASS VARIABLES
 // BEFORE IMPORTING BOOTSTRAP
 
+$brand-primary: darken(#3f007e, 3%);
+
 // BOOTSTRAP 3 IMPORT
 @import '../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap';
 
