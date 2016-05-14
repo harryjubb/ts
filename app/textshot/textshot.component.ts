@@ -65,12 +65,12 @@ export class TSTextShotComponent implements OnInit {
     this.textShotIsGenerated = false;
     this.previewText = "GENERATING IMAGE...";
 
-    console.log('Text is now ' + this.textShot.text);
+    console.log('Text is now "' + this.textShot.text + '"');
     console.log('Style is now ' + JSON.stringify(this.textShot.styles));
 
     // JUST IN CASE
     // CATCH ANY CASE WHERE THERE'S NO TEXT
-    if (this.textShot.text.trim() === '') { // TODO: STRIP TEXT
+    if (this.textShot.text.trim() === '') {
       return;
     }
 

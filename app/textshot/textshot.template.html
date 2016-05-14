@@ -5,8 +5,8 @@
 <br />
 <br />
 
-<!-- TEXTSHOT PREVIEW -->
-<div *ngIf="textShotTextArea.value">
+<!-- TEXTSHOT PREVIEW, GENERATION, AND SHARING -->
+<div *ngIf="textShotTextArea.value && (textShotTextArea.value.trim() !== '')">
 
   <div class="text-center textshot-preview-label">
     {{ previewText }}
