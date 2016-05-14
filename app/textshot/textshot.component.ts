@@ -11,6 +11,7 @@ export class TSTextShotComponent implements OnInit {
 
   textShotInputControl = new Control();
   textShotText: string = "";
+  previewText: string = "PREVIEW";
 
   testText: string = "Original test text";
 
@@ -32,6 +33,7 @@ export class TSTextShotComponent implements OnInit {
 
     console.log('Changed to ' + this.textShotText);
     this.testText = this.textShotText;
+    this.previewText = "GENERATING IMAGE..."
 
   }
 
