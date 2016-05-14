@@ -91,3 +91,21 @@ $textshot-border-color: #2e2e2e;
 //   @include textshot-hi-res;
 //   // display: none;
 // }
+
+// CUSTOM BUTTONS
+
+// TWEET
+$btn-tweet-bg: #00aced;
+$btn-tweet-border: darken($btn-tweet-bg, 5%);
+
+.btn-tweet {
+  @include button-variant($btn-primary-color, $btn-tweet-bg, $btn-tweet-border);
+}
+
+// FACEBOOK
+$btn-facebook-bg: #0084b4;
+$btn-facebook-border: darken($btn-facebook-bg, 5%);
+
+.btn-facebook {
+  @include button-variant($btn-primary-color, $btn-facebook-bg, $btn-facebook-border);
+}

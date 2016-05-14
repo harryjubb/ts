@@ -37,14 +37,22 @@
     <!-- HELP TEXT FOR IMAGE DOWNLOAD IF ON MOBILE -->
     <div class="text-center" *ngIf="onMobile">
       <p class="text-info"><i class="fa fa-info-circle" aria-hidden="true"></i> <strong>Hold down on your TextShot for a "long tap" to save it!</strong></p>
+
+      <br />
+
     </div>
 
     <!-- DOWNLOAD BUTTON IF NOT ON MOBILE -->
     <span *ngIf="!onMobile">
       <!-- <a [href]="textShotPNGOctetUrl" class="btn btn-primary btn-lg" download="textshot.png">Download <i class="fa fa-download" aria-hidden="true"></i></a> -->
-      <button type="button" class="btn btn-primary btn-lg" (click)="downloadTextShotImage()">Download <i class="fa fa-download" aria-hidden="true"></i></button>
+      <button type="button" class="btn btn-primary btn-lg" (click)="downloadTextShotImage()"><i class="fa fa-download" aria-hidden="true"></i> Download</button>
     </span>
 
+    <!-- TWEET -->
+    <button type="button" class="btn btn-lg btn-tweet" (click)="0"><i class="fa fa-twitter" aria-hidden="true"></i> Tweet</button>
+
+    <!-- FACEBOOK -->
+    <button type="button" class="btn btn-lg btn-facebook" (click)="0"><i class="fa fa-facebook-square" aria-hidden="true"></i> Share</button>
 
   </div>
 
