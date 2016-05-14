@@ -33,8 +33,19 @@
 
   <!-- SHARE/POST BUTTONS -->
   <div class="share-buttons text-center" *ngIf="textShotIsGenerated">
-    <!-- <a [href]="textShotPNGOctetUrl" class="btn btn-primary btn-lg" download="textshot.png">Download <i class="fa fa-download" aria-hidden="true"></i></a> -->
-    <button type="button" class="btn btn-primary btn-lg" (click)="downloadTextShotImage()">Download <i class="fa fa-download" aria-hidden="true"></i></button>
+
+    <!-- HELP TEXT FOR IMAGE DOWNLOAD IF ON MOBILE -->
+    <div class="text-center" *ngIf="onMobile">
+      <p class="bg-info">Hold down on your TextShot for a "long tap" to save it!</p>
+    </div>
+
+    <!-- DOWNLOAD BUTTON IF NOT ON MOBILE -->
+    <span *ngIf="!onMobile">
+      <!-- <a [href]="textShotPNGOctetUrl" class="btn btn-primary btn-lg" download="textshot.png">Download <i class="fa fa-download" aria-hidden="true"></i></a> -->
+      <button type="button" class="btn btn-primary btn-lg" (click)="downloadTextShotImage()">Download <i class="fa fa-download" aria-hidden="true"></i></button>
+    </span>
+
+
   </div>
 
 </div>

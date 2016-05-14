@@ -19,8 +19,12 @@ export class TSTextShotComponent implements OnInit {
   textShotPNGBlobUrl: string = "";
   previewText: string = "PREVIEW";
 
-  constructor (private _device: DeviceTypeDetectService) {
-    console.log(_device.device);
+  onMobile: boolean = false;
+
+  constructor (
+    private _device: DeviceTypeDetectService
+  ) {
+    this.onMobile = this._device.device.is_mobile;
   }
 
   ngOnInit () {
