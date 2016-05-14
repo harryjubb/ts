@@ -29,7 +29,20 @@ export class TSTextShotComponent implements OnInit {
   fontFamilies: Array<string> = [
     'Arial',
     'Helvetica',
-    'Times New Roman'
+    'Times New Roman',
+    'Roboto',
+    'Open Sans',
+    'Oswald',
+    'Raleway',
+    'Merriweather',
+    'Indie Flower',
+    'Bitter',
+    'Dosis',
+    'Poiret One',
+    'Libre Baskerville',
+    'Pacifico',
+    'Oxygen',
+    'Cabin'
   ];
   textShotIsGenerated: boolean = false;
   textShotPNGUrl: string = "";
