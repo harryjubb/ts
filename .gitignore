@@ -6,3 +6,6 @@ app/*.js
 app/*.js.map
 typings
 jspm_packages
+.DS_Store
+app/.DS_Store
+app/*/.DS_Store
