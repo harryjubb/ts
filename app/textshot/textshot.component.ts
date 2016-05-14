@@ -4,7 +4,6 @@ import { Control } from '@angular/common';
 import { Observable } from 'rxjs/Observable';
 
 import { DeviceTypeDetectService } from '../services/device-type-detection.service';
-// import { TwitterService } from '../services/twitter.service';
 
 @Component({
   selector: 'ts-textshot',
@@ -15,7 +14,7 @@ export class TSTextShotComponent implements OnInit {
   textShotInputControl = new Control();
   textShot: Object = {
     'text': '',
-    'style': {
+    'styles': {
       'background-color': '#DE84C9'
     }
   };
@@ -28,16 +27,9 @@ export class TSTextShotComponent implements OnInit {
   onMobile: boolean = false;
 
   constructor (
-    private _device: DeviceTypeDetectService //,
-    // private _twitter: TwitterService
+    private _device: DeviceTypeDetectService
   ) {
     this.onMobile = this._device.device.is_mobile;
-
-    // var _token = this._twitter.requestToken()
-    //                           .subscribe(token => console.log(token));
-    //
-    // console.log(_token);
-
   }
 
   ngOnInit () {
@@ -50,7 +42,7 @@ export class TSTextShotComponent implements OnInit {
 
                           this.textShotIsGenerated = false;
 
-                          if (text !== "") {
+                          if (text.trim() !== "") {
                             this.textShot.text = text;
                             this.generateTextShotImage();
                           } else {
@@ -70,9 +62,17 @@ export class TSTextShotComponent implements OnInit {
 
   generateTextShotImage () {
 
-    console.log('Changed to ' + this.textShot.text);
-
+    this.textShotIsGenerated = false;
     this.previewText = "GENERATING IMAGE...";
+
+    console.log('Text is now ' + this.textShot.text);
+    console.log('Style is now ' + JSON.stringify(this.textShot.styles));
+
+    // JUST IN CASE
+    // CATCH ANY CASE WHERE THERE'S NO TEXT
+    if (this.textShot.text.trim() === '') { // TODO: STRIP TEXT
+      return;
+    }
 
     var base = this;
 
