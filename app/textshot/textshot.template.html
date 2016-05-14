@@ -19,9 +19,19 @@
 
     <div class="btn-toolbar" role="toolbar" aria-label="" class="text-center">
 
-      <!-- FONT FACE, SIZE, AND COLOR -->
+      <!-- FONT FAMILY, SIZE, AND COLOR -->
       <div class="btn-group style-toolbar-btn-group" role="group" aria-label="">
-        <button type="button" class="btn btn-default">Arial <i class="fa fa-caret-down" aria-hidden="true"></i></button>
+
+        <!-- FONT FAMILY -->
+        <div class="btn-group" role="group">
+          <button type="button" class="btn btn-default dropdown-toggle" [ngStyle]="{'font-family': textShot.styles['font-family']}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ textShot.styles['font-family'] }} <i class="fa fa-caret-down" aria-hidden="true"></i></button>
+          <ul class="dropdown-menu">
+            <li *ngFor="let fontFamily of fontFamilies">
+              <a href="#" (click)="textShot.styles['font-family'] = fontFamily ; regenerateTextShotImage()"><span [ngStyle]="{'font-family': fontFamily}">{{ fontFamily }}</span></a>
+            </li>
+            </ul>
+        </div>
+
         <button type="button" class="btn btn-default">{{ textShot.styles['font-size'].replace('pt', '') }} <i class="fa fa-caret-down" aria-hidden="true"></i></button>
         <!-- <button type="button" class="btn btn-default"><i class="fa fa-font" aria-hidden="true"></i> <i class="fa fa-caret-down" aria-hidden="true"></i></button> -->
         <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-text-color" [ngStyle]="{color: textShot.styles.color}" aria-hidden="true"> <i class="fa fa-caret-down" style='color: black;' aria-hidden="true"></i></span></button> <!--  <i class="fa fa-caret-down" aria-hidden="true"></i> -->
@@ -94,7 +104,7 @@
     </span>
 
     <!-- TWEET -->
-    <button type="button" class="btn btn-lg btn-tweet" (click)="0"><i class="fa fa-twitter" aria-hidden="true"></i> Tweet</button>
+    <!-- <a href="" target="_blank" class="btn btn-lg btn-tweet" (click)="0"><i class="fa fa-twitter" aria-hidden="true"></i> Tweet</a> -->
 
     <!-- FACEBOOK -->
     <!-- <button type="button" class="btn btn-lg btn-facebook" (click)="0"><i class="fa fa-facebook-square" aria-hidden="true"></i> Share</button> -->

@@ -15,7 +15,7 @@ export class TSTextShotComponent implements OnInit {
   textShot: Object = {
     'text': '',
     'styles': {
-      'font-family': 'Helvetica',
+      'font-family': 'Arial',
       'font-size': '24pt',
       'color': 'black',
       'background-color': '#eee',
@@ -26,6 +26,11 @@ export class TSTextShotComponent implements OnInit {
       'text-align': 'left'
     }
   };
+  fontFamilies: Array<string> = [
+    'Arial',
+    'Helvetica',
+    'Times New Roman'
+  ];
   textShotIsGenerated: boolean = false;
   textShotPNGUrl: string = "";
   textShotPNGOctetUrl: string = "";
