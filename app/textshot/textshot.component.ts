@@ -3,11 +3,16 @@ import { Control } from '@angular/common';
 
 import { Observable } from 'rxjs/Observable';
 
+import { ColorPickerDirective } from '../color-picker/color-picker.directive';
+
 import { DeviceTypeDetectService } from '../services/device-type-detection.service';
 
 @Component({
   selector: 'ts-textshot',
-  templateUrl: 'app/textshot/textshot.template.html'
+  templateUrl: 'app/textshot/textshot.template.html',
+  directives: [
+    ColorPickerDirective
+  ]
 })
 export class TSTextShotComponent implements OnInit {
 
@@ -79,8 +84,6 @@ export class TSTextShotComponent implements OnInit {
     private _device: DeviceTypeDetectService
   ) {
     this.onMobile = this._device.device.is_mobile;
-
-    console.log(jQuery);
   }
 
   ngOnInit () {

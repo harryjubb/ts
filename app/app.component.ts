@@ -4,6 +4,7 @@ import { DeviceTypeDetectService } from './services/device-type-detection.servic
 
 import { TSTextShotComponent } from './textshot/textshot.component';
 
+
 @Component({
   selector: 'ts-app',
   templateUrl: 'app/app.template.html',

@@ -10,4 +10,6 @@ import 'rxjs/Rx';
 import { bootstrap }    from '@angular/platform-browser-dynamic';
 import { TSAppComponent } from './app.component';
 
-bootstrap(TSAppComponent);
+import { ColorPickerService } from './color-picker/color-picker.service';
+
+bootstrap(TSAppComponent, [ColorPickerService]);
