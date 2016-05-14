@@ -1,4 +1,4 @@
-import {Component, DynamicComponentLoader, Directive, Input, Output, ViewContainerRef, ElementRef, EventEmitter, OnInit} from 'angular2/core';
+import {Component, DynamicComponentLoader, Directive, Input, Output, ViewContainerRef, ElementRef, EventEmitter, OnInit} from '@angular/core';
 import {ColorPickerService} from './color-picker.service';
 import {Rgba, Hsla, Hsva, SliderPosition, SliderDimension} from './classes';
 

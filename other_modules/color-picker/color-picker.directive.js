@@ -8,7 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('angular2/core');
+var core_1 = require('@angular/core');
 var color_picker_service_1 = require('./color-picker.service');
 var classes_1 = require('./classes');
 var styleUrls = ['app/color-picker/color-picker.css'];
@@ -106,10 +106,9 @@ var ColorPickerDirective = (function () {
                 '(click)': 'onClick()'
             }
         }), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof core_1.DynamicComponentLoader !== 'undefined' && core_1.DynamicComponentLoader) === 'function' && _a) || Object, (typeof (_b = typeof core_1.ViewContainerRef !== 'undefined' && core_1.ViewContainerRef) === 'function' && _b) || Object, (typeof (_c = typeof core_1.ElementRef !== 'undefined' && core_1.ElementRef) === 'function' && _c) || Object, color_picker_service_1.ColorPickerService])
+        __metadata('design:paramtypes', [core_1.DynamicComponentLoader, core_1.ViewContainerRef, core_1.ElementRef, color_picker_service_1.ColorPickerService])
     ], ColorPickerDirective);
     return ColorPickerDirective;
-    var _a, _b, _c;
 }());
 exports.ColorPickerDirective = ColorPickerDirective;
 var TextDirective = (function () {
@@ -221,10 +220,9 @@ var SliderDirective = (function () {
                 '(touchstart)': 'start($event)'
             }
         }), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof core_1.ElementRef !== 'undefined' && core_1.ElementRef) === 'function' && _a) || Object])
+        __metadata('design:paramtypes', [core_1.ElementRef])
     ], SliderDirective);
     return SliderDirective;
-    var _a;
 }());
 exports.SliderDirective = SliderDirective;
 var DialogComponent = (function () {
@@ -450,10 +448,9 @@ var DialogComponent = (function () {
             styleUrls: styleUrls,
             directives: [SliderDirective, TextDirective]
         }), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof core_1.ElementRef !== 'undefined' && core_1.ElementRef) === 'function' && _a) || Object, color_picker_service_1.ColorPickerService])
+        __metadata('design:paramtypes', [core_1.ElementRef, color_picker_service_1.ColorPickerService])
     ], DialogComponent);
     return DialogComponent;
-    var _a;
 }());
 exports.DialogComponent = DialogComponent;
 //# sourceMappingURL=color-picker.directive.js.map
