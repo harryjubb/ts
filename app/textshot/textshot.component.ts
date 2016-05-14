@@ -3,6 +3,8 @@ import { Control } from '@angular/common';
 
 import { Observable } from 'rxjs/Observable';
 
+import { DeviceTypeDetectService } from '../services/device-type-detection.service';
+
 @Component({
   selector: 'ts-textshot',
   templateUrl: 'app/textshot/textshot.template.html'
@@ -17,8 +19,8 @@ export class TSTextShotComponent implements OnInit {
   textShotPNGBlobUrl: string = "";
   previewText: string = "PREVIEW";
 
-  constructor () {
-
+  constructor (private _device: DeviceTypeDetectService) {
+    console.log(_device.device);
   }
 
   ngOnInit () {
