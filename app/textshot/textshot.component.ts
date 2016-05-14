@@ -12,17 +12,19 @@ export class TSTextShotComponent implements OnInit {
   textShotInputControl = new Control();
   textShotText: string = "";
 
+  testText: string = "Original test text";
+
   constructor () {
 
   }
 
   ngOnInit () {
 
-    // TEXTSHOT DEBOUNCE
-    // this.result = this.textShotInputControl.valueChanges
-    //                     .debounceTime(400)
-    //                     .distinctUntilChanged()
-    //                     .switchMap(text => null);
+    // TEXTSHOT IMAGE GENERATION DEBOUNCE
+    this.textShotInputControl.valueChanges
+                        .debounceTime(1000)
+                        .distinctUntilChanged()
+                        .subscribe(text => { console.log('Changed to ' + text) ; this.testText = text; });
 
   }
 
