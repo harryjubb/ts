@@ -1,5 +1,5 @@
 <!-- TEXTSHOT TEXT INPUT -->
-<textarea class="form-control textshot-textarea" placeholder="Type or paste text here..." rows="4" [ngFormControl]="textShotInputControl" #textShotTextArea>
+<textarea class="form-control textshot-textarea" placeholder="Type or paste text here..." rows="4" (keyup)="textShotTextAreaWasChanged()" [ngFormControl]="textShotInputControl" #textShotTextArea>
 </textarea>
 
 <br />
@@ -14,10 +14,12 @@
 
   <br />
 
+  <!-- TEXTSHOT PREVIEW DIV -->
   <div id="textshot-div" class="textshot-preview" *ngIf="!textShotIsGenerated">
     {{ textShotTextArea.value }}
   </div>
 
+  <!-- GENERATED TEXTSHOT IMAGE -->
   <img [src]="textShotPNGUrl" [alt]="textShotText" *ngIf="textShotIsGenerated" />
 
   <!-- <div id="textshot-div-hi-res" class="textshot-preview textshot-hidden-hi-res-div">

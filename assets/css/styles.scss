@@ -34,7 +34,7 @@ $textshot-textarea-font-size: 3rem;
 $textshot-font-size: 2em;
 $textshot-min-height: $textshot-font-size * 3;
 $textshot-padding-base: .5em;
-$textshot-padding-sides: $textshot-padding-base * 2;
+$textshot-padding-sides: $textshot-padding-base * 1.5;
 
 @mixin textshot {
   background-color: #dedede;

@@ -24,12 +24,26 @@ export class TSTextShotComponent implements OnInit {
     // TEXTSHOT IMAGE GENERATION WITH DEBOUNCE
     this.textShotInputControl.valueChanges
                         .debounceTime(1000)
-                        .distinctUntilChanged()
+                        // .distinctUntilChanged()
                         .subscribe(text => {
+
                           this.textShotIsGenerated = false;
-                          this.textShotText = text;
-                          this.generateTextShotImage();
+
+                          if (text !== "") {
+                            this.textShotText = text;
+                            this.generateTextShotImage();
+                          } else {
+                            this.textShotText = "";
+                          }
+
                         });
+
+  }
+
+  textShotTextAreaWasChanged () {
+
+    this.textShotIsGenerated = false;
+    this.previewText = "PREVIEW";
 
   }
 
