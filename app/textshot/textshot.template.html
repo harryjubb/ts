@@ -29,10 +29,19 @@
             <li *ngFor="let fontFamily of fontFamilies">
               <a href="#" (click)="textShot.styles['font-family'] = fontFamily ; regenerateTextShotImage()"><span [ngStyle]="{'font-family': fontFamily}">{{ fontFamily }}</span></a>
             </li>
-            </ul>
+          </ul>
         </div>
 
-        <button type="button" class="btn btn-default">{{ textShot.styles['font-size'].replace('pt', '') }} <i class="fa fa-caret-down" aria-hidden="true"></i></button>
+        <!-- FONT SIZE -->
+        <!-- <div class="btn-group" role="group">
+          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ textShot.styles['font-size'].replace('pt', '') }} <i class="fa fa-caret-down" aria-hidden="true"></i></button>
+          <ul class="dropdown-menu">
+            <li *ngFor="let fontSize of fontSizes">
+              <a href="#" (click)="textShot.styles['font-size'] = fontSize ; regenerateTextShotImage()"><span [ngStyle]="{'font-size': fontSize}">{{ fontSize.replace('pt', '') }}</span></a>
+            </li>
+          </ul>
+        </div> -->
+
         <!-- <button type="button" class="btn btn-default"><i class="fa fa-font" aria-hidden="true"></i> <i class="fa fa-caret-down" aria-hidden="true"></i></button> -->
         <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-text-color" [ngStyle]="{color: textShot.styles.color}" aria-hidden="true"> <i class="fa fa-caret-down" style='color: black;' aria-hidden="true"></i></span></button> <!--  <i class="fa fa-caret-down" aria-hidden="true"></i> -->
         <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-text-background" [ngStyle]="{color: textShot.styles['background-color']}" aria-hidden="true"> <i class="fa fa-caret-down" style='color: black;' aria-hidden="true"></i></span></button> <!--  <i class="fa fa-caret-down" aria-hidden="true"></i> -->

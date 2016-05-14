@@ -18,7 +18,7 @@ export class TSTextShotComponent implements OnInit {
       'font-family': 'Arial',
       'font-size': '24pt',
       'color': 'black',
-      'background-color': '#eee',
+      'background-color': '#b2aae6',
       'background-image': 'none',
       'font-weight': 'normal',
       'font-style': 'normal',
@@ -44,6 +44,29 @@ export class TSTextShotComponent implements OnInit {
     'Oxygen',
     'Cabin'
   ];
+  fontSizes: Array<string> = [
+    '10pt',
+    '11pt',
+    '12pt',
+    '13pt',
+    '14pt',
+    '15pt',
+    '16pt',
+    '17pt',
+    '18pt',
+    '19pt',
+    '20pt',
+    '21pt',
+    '22pt',
+    '23pt',
+    '24pt',
+    '25pt',
+    '26pt',
+    '27pt',
+    '28pt',
+    '29pt',
+    '30pt'
+  ];
   textShotIsGenerated: boolean = false;
   textShotPNGUrl: string = "";
   textShotPNGOctetUrl: string = "";
@@ -56,6 +79,8 @@ export class TSTextShotComponent implements OnInit {
     private _device: DeviceTypeDetectService
   ) {
     this.onMobile = this._device.device.is_mobile;
+
+    console.log(jQuery);
   }
 
   ngOnInit () {
