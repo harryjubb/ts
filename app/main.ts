@@ -1,3 +1,9 @@
+// Import dependencies
+
+// import 'zone.js';
+// import 'reflect-metadata';
+// import 'es6-shim';
+
 // Add all operators to Observables
 import 'rxjs/Rx';
 
