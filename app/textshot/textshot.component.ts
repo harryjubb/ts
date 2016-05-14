@@ -70,4 +70,8 @@ export class TSTextShotComponent implements OnInit {
 
   }
 
+  downloadTextShotImage () {
+    console.log('Downloading...');
+  }
+
 }
