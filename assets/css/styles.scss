@@ -32,15 +32,37 @@ $textshot-textarea-font-size: 3rem;
 }
 
 $textshot-font-size: 2em;
+$textshot-min-height: $textshot-font-size * 3;
 $textshot-padding-base: .5em;
+$textshot-padding-sides: $textshot-padding-base * 2;
 
-.textshot-preview {
+@mixin textshot {
   background-color: #dedede;
   font-size: $textshot-font-size;
-  min-height: $textshot-font-size * 3;
+  min-height: $textshot-min-height;
   padding-bottom: $textshot-padding-base;
-  padding-left: $textshot-padding-base * 2;
-  padding-right: $textshot-padding-base * 2;
+  padding-left: $textshot-padding-sides;
+  padding-right: $textshot-padding-sides;
   padding-top: $textshot-padding-base;
-
 }
+
+.textshot-preview {
+  @include textshot;
+}
+
+// $textshot-hi-res-factor: 3;
+//
+// @mixin textshot-hi-res {
+//   background-color: #dedede;
+//   font-size: $textshot-font-size * $textshot-hi-res-factor;
+//   min-height: $textshot-min-height * $textshot-hi-res-factor;
+//   padding-bottom: $textshot-padding-base * $textshot-hi-res-factor;
+//   padding-left: $textshot-padding-sides * $textshot-hi-res-factor;
+//   padding-right: $textshot-padding-sides * $textshot-hi-res-factor;
+//   padding-top: $textshot-padding-base * $textshot-hi-res-factor;
+// }
+//
+// .textshot-hidden-hi-res-div {
+//   @include textshot-hi-res;
+//   // display: none;
+// }
