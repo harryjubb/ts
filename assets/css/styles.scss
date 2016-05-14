@@ -16,17 +16,31 @@ body {
   font-size: 1.75em;
 }
 
+$textshot-textarea-font-size: 3rem;
+
 .textshot-textarea {
-  font-size: 3rem;
+  font-size: $textshot-textarea-font-size;
   resize: none;
 }
 
-$textshot-font-size: 3rem;
-$textshot-padding-base: .5rem;
+.textshot-preview-label {
+  color: #959595;
+  font-size: 1.5em;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+$textshot-font-size: 2em;
+$textshot-padding-base: .5em;
 
 .textshot-preview {
   background-color: #dedede;
   font-size: $textshot-font-size;
-  min-height: $textshot-font-size * 9;
-  padding: $textshot-padding-base;
+  min-height: $textshot-font-size * 3;
+  padding-bottom: $textshot-padding-base;
+  padding-left: $textshot-padding-base * 2;
+  padding-right: $textshot-padding-base * 2;
+  padding-top: $textshot-padding-base;
+
 }
