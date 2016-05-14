@@ -23,8 +23,10 @@ $textshot-textarea-font-size: 3rem;
   resize: none;
 }
 
+$textshot-preview-label-color: #959595;
+
 .textshot-preview-label {
-  color: #959595;
+  color: $textshot-preview-label-color;
   font-size: 1.75em;
   font-weight: 700;
   letter-spacing: 1px;
@@ -36,8 +38,18 @@ $textshot-min-height: $textshot-font-size * 3;
 $textshot-padding-base: .5em;
 $textshot-padding-sides: $textshot-padding-base * 1.5;
 
+$textshot-default-background-color: #eee;
+$textshot-border-color: #2e2e2e;
+
+@mixin textshot-border {
+  border-radius: 0;
+  border-style: solid;
+  border-width: 1px;
+  border-color: $textshot-border-color;
+}
+
 @mixin textshot {
-  background-color: #dedede;
+  background-color: $textshot-default-background-color;
   font-size: $textshot-font-size;
   min-height: $textshot-min-height;
   padding-bottom: $textshot-padding-base;
@@ -46,8 +58,16 @@ $textshot-padding-sides: $textshot-padding-base * 1.5;
   padding-top: $textshot-padding-base;
 }
 
+.textshot-preview-container {
+  @include textshot-border;
+}
+
 .textshot-preview {
   @include textshot;
+}
+
+.textshot-img {
+  @include textshot-border;
 }
 
 // $textshot-hi-res-factor: 3;
