@@ -1,9 +1,56 @@
+<br />
+
+<!-- STYLE TOOLBAR -->
+<div class="style-toolbar">
+
+  <div class="btn-toolbar" role="toolbar" aria-label="" class="text-center">
+
+    <!-- FONT FACE, SIZE, AND COLOR -->
+    <div class="btn-group" role="group" aria-label="">
+      <button type="button" class="btn btn-default">Arial <i class="fa fa-caret-down" aria-hidden="true"></i></button>
+      <button type="button" class="btn btn-default">14 <i class="fa fa-caret-down" aria-hidden="true"></i></button>
+      <!-- <button type="button" class="btn btn-default"><i class="fa fa-font" aria-hidden="true"></i> <i class="fa fa-caret-down" aria-hidden="true"></i></button> -->
+      <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-text-color" aria-hidden="true"> <i class="fa fa-caret-down" aria-hidden="true"></i></span></button> <!--  <i class="fa fa-caret-down" aria-hidden="true"></i> -->
+      <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-text-background" aria-hidden="true"> <i class="fa fa-caret-down" aria-hidden="true"></i></span></button> <!--  <i class="fa fa-caret-down" aria-hidden="true"></i> -->
+    </div>
+
+    <!-- FONT STROKE/STROKE COLOR -->
+    <div class="btn-group" role="group" aria-label="Text Stroke">
+      <button type="button" class="btn btn-default"><i class="fa fa-paint-brush" aria-hidden="true"></i><span class="glyphicon glyphicon-text-size" aria-hidden="true"></span> <i class="fa fa-caret-down" aria-hidden="true"></i></button>
+      <button type="button" class="btn btn-default"><i class="fa fa-paint-brush" aria-hidden="true"></i><span class="glyphicon glyphicon-text-color" aria-hidden="true"></span> <i class="fa fa-caret-down" aria-hidden="true"></i></button>
+    </div>
+
+    <!-- FONT WEIGHT/EMPHASIS -->
+    <div class="btn-group" role="group" aria-label="Text Decoration">
+      <button type="button" class="btn btn-default"><i class="fa fa-bold" aria-hidden="true"></i></button>
+      <button type="button" class="btn btn-default"><i class="fa fa-italic" aria-hidden="true"></i></button>
+      <button type="button" class="btn btn-default"><i class="fa fa-underline" aria-hidden="true"></i></button>
+      <button type="button" class="btn btn-default"><i class="fa fa-strikethrough" aria-hidden="true"></i></button>
+    </div>
+
+    <!-- TEXT ALIGNMENT -->
+    <div class="btn-group" role="group" aria-label="Text Alignment">
+      <button type="button" class="btn btn-default"><i class="fa fa-align-left" aria-hidden="true"></i></button>
+      <button type="button" class="btn btn-default"><i class="fa fa-align-center" aria-hidden="true"></i></button>
+      <button type="button" class="btn btn-default"><i class="fa fa-align-right" aria-hidden="true"></i></button>
+      <button type="button" class="btn btn-default"><i class="fa fa-align-justify" aria-hidden="true"></i></button>
+    </div>
+
+    <!-- SAVE DEFAULTS -->
+    <div class="btn-group" role="group" aria-label="Save Defaults">
+      <button type="button" class="btn btn-success"><span class="glyphicon glyphicon-save-file" aria-hidden="true"></span> Save Settings</button>
+    </div>
+
+  </div>
+
+</div>
+
 <!-- TEXTSHOT TEXT INPUT -->
 <textarea class="form-control textshot-textarea" placeholder="Type or paste text here..." rows="4" (keyup)="textShotTextAreaWasChanged()" [ngFormControl]="textShotInputControl" #textShotTextArea>
 </textarea>
 
 <br />
-<br />
+<!-- <br /> -->
 
 <!-- TEXTSHOT PREVIEW, GENERATION, AND SHARING -->
 <div *ngIf="textShotTextArea.value && (textShotTextArea.value.trim() !== '')">

@@ -15,7 +15,9 @@ export class TSTextShotComponent implements OnInit {
   textShot: Object = {
     'text': '',
     'styles': {
-      'background-color': '#DE84C9'
+      'font-family': 'Arial'
+      'color': 'black',
+      'background-color': '#eee'
     }
   };
   textShotIsGenerated: boolean = false;
