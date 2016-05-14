@@ -1,2 +1,13 @@
+// OVERRIDE BOOTSTRAP SASS VARIABLES
+// BEFORE IMPORTING BOOTSTRAP
+
 // BOOTSTRAP 3 IMPORT
 @import '../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap';
+
+body {
+  margin-top: 25px;
+}
+
+.main-title {
+  font-size: 2.5em;
+}
