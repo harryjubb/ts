@@ -35,6 +35,9 @@ export class TSTextShotComponent implements OnInit {
     this.testText = this.textShotText;
     this.previewText = "GENERATING IMAGE..."
 
+    // GENERATE IMAGE
+
+
   }
 
 }
