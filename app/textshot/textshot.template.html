@@ -117,7 +117,7 @@
   </div>
 
   <!-- ADVANCED SETTINGS -->
-  <div *ngIf="settingsShown">
+  <div [ngClass]="{hidden: !settingsShown}">
 
     <!-- <br /> -->
 
@@ -126,18 +126,18 @@
     <form class="form">
 
       <div class="form-group">
-        <div class="checkbox"><label><input type="checkbox" (change)="0" #includeMadeBy> Include "Made by TS"</label></div>
+        <div class="checkbox"><label><input type="checkbox" (change)="regenerateTextShotImage()" #includeCreatedWith> Include "Created with TS"</label></div>
       </div>
 
       <div class="form-group">
-        <div class="checkbox"><label><input type="checkbox" (change)="0" #includeSource> Include source</label></div>
+        <div class="checkbox"><label><input type="checkbox" (change)="regenerateTextShotImage()" #includeSource> Include source</label></div>
         <span *ngIf="includeSource.checked">
           <input type="text" class="form-control" placeholder="Type or paste in a source">
         </span>
       </div>
 
       <div class="form-group">
-        <div class="checkbox"><label><input type="checkbox" (change)="0" #includeURL> Include URL</label></div>
+        <div class="checkbox"><label><input type="checkbox" (change)="regenerateTextShotImage()" #includeURL> Include URL</label></div>
         <span *ngIf="includeURL.checked">
           <input type="url" class="form-control" placeholder="Type or paste in a URL">
         </span>
@@ -165,6 +165,11 @@
   <div class="textshot-preview-container" [ngClass]="{'hidden': textShotIsGenerated}">
     <div id="textshot-div" class="textshot-preview" [ngStyle]="textShot.styles">
       {{ textShotTextArea.value }}
+
+      <div *ngIf="includeCreatedWith.checked">
+        Made with TS - <span style="text-decoration: underline">http://j.mp/ts-textshots</span>
+      </div>
+
     </div>
   </div>
 
