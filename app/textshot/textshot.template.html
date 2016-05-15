@@ -58,9 +58,12 @@
         </button>
 
         <!-- TEXTSHOT BACKGROUND COLOR -->
+        <!-- INLINE STYLE HAD TO BE HACKED IN BECAUSE FOR SOME REASON -->
+        <!-- COLORPICKER SEEMS TO HAVE BROKEN ROUNDED CORNERS -->
         <button
             type="button"
             class="btn btn-default"
+            style="border-top-right-radius: 5px; border-bottom-right-radius: 5px;"
             [(colorPicker)]="textShot.styles['background-color']"
             [cpPosition]="'top'"
             [cpOutputFormat]="'rgba'"
