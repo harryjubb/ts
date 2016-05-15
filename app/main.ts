@@ -8,6 +8,7 @@
 import 'rxjs/Rx';
 
 import { bootstrap }    from '@angular/platform-browser-dynamic';
+import { enableProdMode } from '@angular/core';
 
 // import { ROUTER_PROVIDERS } from '@angular/router';
 // import { Angulartics2 } from 'angulartics2/src/core/angulartics2';
@@ -16,6 +17,7 @@ import { TSAppComponent } from './app.component';
 
 import { ColorPickerService } from './color-picker/color-picker.service';
 
+enableProdMode();
 bootstrap(TSAppComponent, [
   // ROUTER_PROVIDERS,
   // Angulartics2,
