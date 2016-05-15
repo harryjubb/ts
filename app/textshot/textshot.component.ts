@@ -84,6 +84,8 @@ export class TSTextShotComponent implements OnInit {
 
   timeoutID = null;
 
+  tinyColor = tinycolor;
+
   constructor (
     private _device: DeviceTypeDetectService
   ) {

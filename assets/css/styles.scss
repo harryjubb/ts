@@ -111,6 +111,10 @@ $textshot-border-color: #2e2e2e;
 
 // CUSTOM BUTTONS
 
+.bg-dark-white {
+  background-color: darken(#fff, 20%);
+}
+
 // TWEET
 $btn-tweet-bg: #00aced;
 $btn-tweet-border: darken($btn-tweet-bg, 5%);
