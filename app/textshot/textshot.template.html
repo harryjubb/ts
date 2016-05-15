@@ -206,20 +206,20 @@
       <div class="textshot-background" [ngStyle]="textShot.backgroundImageStyles"></div>
       <div class="textshot-content">
         <div class="textshot-text">
-          {{ textShotTextArea.value }}
+          <span [ngStyle]="textShot.textBackgroundStyles">{{ textShotTextArea.value }}</span>
         </div>
 
         <div class="textshot-extras">
           <div class="textshot-source" [ngClass]="{hidden: !(includeSource.checked)}">
-            {{ textShotSource.value }}
+            <span [ngStyle]="textShot.textBackgroundStyles">{{ textShotSource.value }}</span>
           </div>
 
           <div class="textshot-url" [ngClass]="{hidden: !(includeURL.checked)}">
-            {{ textShotURL.value }}
+            <span [ngStyle]="textShot.textBackgroundStyles">{{ textShotURL.value }}</span>
           </div>
 
           <div class="created-with" [ngClass]="{hidden: !(includeCreatedWith.checked)}">
-            Created with TS - <span style="text-decoration: underline">http://j.mp/ts-textshots</span>
+            <span [ngStyle]="textShot.textBackgroundStyles">Created with TS - <span style="text-decoration: underline">http://j.mp/ts-textshots</span></span>
           </div>
         </div>
       </div>

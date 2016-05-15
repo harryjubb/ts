@@ -35,12 +35,16 @@ export class TSTextShotComponent implements OnInit {
     },
     'backgroundColorStyles': {
       'background-color': '#fff', // '#fff',
-    }
+    },
     'backgroundImageStyles': {
       'background-color': 'rgba(255, 255, 255, 0)', // ENSURE TRANSPARENT COLOR BG FOR IMAGE
       'background-image': 'none',
       'background-size': 'cover',
       'opacity': '1'
+    },
+    'textBackgroundStyles': {
+      'background-color': 'rgba(255, 255, 255, 0)'
+      // 'background-color': '#f00'
     }
   };
   fontFamilies: Array<string> = [
