@@ -1,5 +1,6 @@
 {
   "ambientDependencies": {
+    "add2home": "registry:dt/add2home#2.0.5+20160316155526",
     "es6-shim": "registry:dt/es6-shim#0.31.2+20160317120654",
     "html2canvas": "registry:dt/html2canvas#0.0.0+20160414141641",
     "jasmine": "registry:dt/jasmine#2.2.0+20160412134438",
