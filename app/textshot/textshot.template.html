@@ -156,7 +156,7 @@
       <label>Background Image</label>&nbsp;
 
       <span class="btn btn-default btn-file" (mouseenter)="showImageUploadDisclaimer = true">
-        <i class="fa fa-upload" aria-hidden="true"></i> <span *ngIf="!onMobile">Upload Image</span> <span *ngIf="onMobile">Choose Image</span> <input type="file" accept="image/*" (change)="handleImageUpload($event)">
+        <i class="fa fa-upload" aria-hidden="true"></i> <span *ngIf="!onMobile">Upload <span *ngIf="textShot.backgroundImageStyles['background-image'] !== 'none'">New </span>Image</span> <span *ngIf="onMobile">Choose <span *ngIf="textShot.backgroundImageStyles['background-image'] !== 'none'">New </span>Image</span> <input type="file" accept="image/*" (change)="handleImageUpload($event)">
       </span>
 
       <!-- <span *ngIf="!onMobile">
