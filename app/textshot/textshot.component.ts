@@ -7,6 +7,8 @@ import { ColorPickerDirective } from '../color-picker/color-picker.directive';
 
 import { DeviceTypeDetectService } from '../services/device-type-detection.service';
 
+declare var tinycolor: any;
+
 @Component({
   selector: 'ts-textshot',
   templateUrl: 'app/textshot/textshot.template.html',
