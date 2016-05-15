@@ -274,4 +274,13 @@ export class TSTextShotComponent implements OnInit {
 
   }
 
+  handleClearImage () {
+
+    if (this.textShot.styles['background-image'] !== 'none') {
+      this.textShot.styles['background-image'] = 'none';
+      this.regenerateTextShotImage();
+    }
+    
+  }
+
 }

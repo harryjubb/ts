@@ -135,9 +135,13 @@
         &nbsp;or&nbsp;
 
         <div class="upload-drag-acceptor" (mouseenter)="showImageUploadDisclaimer = true">
-          Drag and drop image or image file here
+          Drag and drop image or image file
         </div>
       </span>
+
+      &nbsp;
+
+      <button *ngIf="textShot.styles['background-image'] !== 'none'" (click)="handleClearImage()" class="btn btn-danger">Clear</button>
 
       <!-- <input [ngFormControl]="textShotBgImageUrlInputControl" class="form-control" type="url" placeholder="From URL" /> -->
 
