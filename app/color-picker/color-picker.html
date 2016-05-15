@@ -1,5 +1,5 @@
 <div class="color-picker" *ngIf="show" [style.height.px]="cpHeight" [style.top.px]="top" [style.left.px]="left" [style.position]="position">
-    <div class="arrow arrow-{{cpPosition}}" [style.top.px]="arrowTop"></div>    
+    <div class="arrow arrow-{{cpPosition}}" [style.top.px]="arrowTop"></div>
 
     <div [slider] [style.background-color]="hueSliderColor" [rgX]="1" [rgY]="1" (newValue)="setSaturationAndBrightness($event)" class="saturation-lightness">
         <div [style.left.px]="slider.s" [style.top.px]="slider.v" class="cursor"></div>
@@ -38,7 +38,7 @@
     </div>
 
     <div (click)="formatPolicy()" class="type-policy"></div>
-    
+
     <button *ngIf="cpCancelButton" type="button" class="{{cpCancelButtonClass}}" (click)="cancelColor()">{{cpCancelButtonText}}</button>
 
 </div>
