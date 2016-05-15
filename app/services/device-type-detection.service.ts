@@ -1,4 +1,4 @@
-import {Injectable} from 'angular2/core';
+import {Injectable} from '@angular/core';
 
 // DEVICE TYPE DETECTION WITH WURFL
 declare var WURFL: any;
