@@ -169,6 +169,14 @@
         {{ textShotTextArea.value }}
       </div>
 
+      <div class="textshot-source" *ngIf="includeSource.checked">
+        Created with TS - <span style="text-decoration: underline">http://j.mp/ts-textshots</span>
+      </div>
+
+      <div class="textshot-url" *ngIf="includeURL.checked">
+        Created with TS - <span style="text-decoration: underline">http://j.mp/ts-textshots</span>
+      </div>
+
       <div class="created-with" *ngIf="includeCreatedWith.checked">
         Created with TS - <span style="text-decoration: underline">http://j.mp/ts-textshots</span>
       </div>
