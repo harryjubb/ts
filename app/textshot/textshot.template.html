@@ -164,10 +164,13 @@
   <!-- TEXTSHOT PREVIEW DIV -->
   <div class="textshot-preview-container" [ngClass]="{'hidden': textShotIsGenerated}">
     <div id="textshot-div" class="textshot-preview" [ngStyle]="textShot.styles">
-      {{ textShotTextArea.value }}
 
-      <div *ngIf="includeCreatedWith.checked">
-        Made with TS - <span style="text-decoration: underline">http://j.mp/ts-textshots</span>
+      <div>
+        {{ textShotTextArea.value }}
+      </div>
+
+      <div class="created-with" *ngIf="includeCreatedWith.checked">
+        Created with TS - <span style="text-decoration: underline">http://j.mp/ts-textshots</span>
       </div>
 
     </div>

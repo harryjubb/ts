@@ -83,6 +83,11 @@ $textshot-border-color: #2e2e2e;
   @include textshot-border;
 }
 
+.created-with {
+  @extend .pull-right;
+  font-size: 1.5rem;
+}
+
 // $textshot-hi-res-factor: 3;
 //
 // @mixin textshot-hi-res {
