@@ -181,7 +181,7 @@ export class TSTextShotComponent implements OnInit {
     if (this.timeoutID) window.clearTimeout(this.timeoutID);
     this.timeoutID = window.setTimeout(() => {
       base.generateTextShotImage();
-    }, 250);
+    }, 500);
 
   }
 
