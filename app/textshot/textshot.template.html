@@ -200,21 +200,24 @@
   <div class="textshot-preview-container" [ngClass]="{'hidden': textShotIsGenerated}">
     <div id="textshot-div" class="textshot-preview" [ngStyle]="textShot.styles">
 
-      <div class="textshot-text">
-        {{ textShotTextArea.value }}
-      </div>
-
-      <div class="textshot-extras">
-        <div class="textshot-source" [ngClass]="{hidden: !(includeSource.checked)}">
-          {{ textShotSource.value }}
+      <div class="textshot-background" [ngStyle]="textShot.backgroundStyles"></div>
+      <div class="textshot-content">
+        <div class="textshot-text">
+          {{ textShotTextArea.value }}
         </div>
 
-        <div class="textshot-url" [ngClass]="{hidden: !(includeURL.checked)}">
-          {{ textShotURL.value }}
-        </div>
+        <div class="textshot-extras">
+          <div class="textshot-source" [ngClass]="{hidden: !(includeSource.checked)}">
+            {{ textShotSource.value }}
+          </div>
 
-        <div class="created-with" [ngClass]="{hidden: !(includeCreatedWith.checked)}">
-          Created with TS - <span style="text-decoration: underline">http://j.mp/ts-textshots</span>
+          <div class="textshot-url" [ngClass]="{hidden: !(includeURL.checked)}">
+            {{ textShotURL.value }}
+          </div>
+
+          <div class="created-with" [ngClass]="{hidden: !(includeCreatedWith.checked)}">
+            Created with TS - <span style="text-decoration: underline">http://j.mp/ts-textshots</span>
+          </div>
         </div>
       </div>
 

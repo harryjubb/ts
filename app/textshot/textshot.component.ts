@@ -26,12 +26,23 @@ export class TSTextShotComponent implements OnInit {
       'font-family': 'Merriweather',
       'font-size': '24pt',
       'color': '#000',
-      'background-color': '#fff',
+      'background-color': 'none', // '#fff',
       'background-image': 'none',
       'font-weight': 'normal',
       'font-style': 'normal',
       'text-decoration': 'none',
       'text-align': 'left'
+    },
+    'backgroundStyles': {
+      'background-color': 'none', // '#fff',
+      'background-image': 'url("http://www.planwallpaper.com/static/images/colorful-triangles-background_yB0qTG6.jpg")',
+      'background-size': 'cover',
+      '-webkit-filter': 'blur(0px)',
+      '-moz-filter': 'blur(0px)',
+      '-o-filter': 'blur(0px)',
+      '-ms-filter': 'blur(0px)',
+      'filter': 'blur(0px)'
+
     }
   };
   fontFamilies: Array<string> = [
@@ -280,7 +291,7 @@ export class TSTextShotComponent implements OnInit {
       this.textShot.styles['background-image'] = 'none';
       this.regenerateTextShotImage();
     }
-    
+
   }
 
 }

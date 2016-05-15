@@ -206,7 +206,7 @@ $textshot-border-color: #2e2e2e;
 }
 
 @mixin textshot {
-  background-color: $textshot-default-background-color;
+  // background-color: $textshot-default-background-color;
   font-size: $textshot-font-size;
   min-height: $textshot-min-height;
   padding-bottom: $textshot-padding-base;
@@ -232,6 +232,26 @@ $created-with-font-size: 1.5rem;
   flex: 1;
   flex-direction: column;
   width: 100%;
+  position: relative;
+}
+
+.textshot-background {
+  position:absolute;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+	z-index:1;
+}
+
+.textshot-content {
+  position:relative;
+	z-index:2;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
 }
 
 .textshot-text {
