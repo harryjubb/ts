@@ -6,7 +6,7 @@
 <!-- <br /> -->
 
 <!-- TEXTSHOT PREVIEW, GENERATION, AND SHARING -->
-<div *ngIf="textShotTextArea.value && (textShotTextArea.value.trim() !== '')">
+<div [ngClass]="{hidden: !(textShotTextArea.value && (textShotTextArea.value.trim() !== ''))}">
 
   <div class="text-center textshot-preview-label">
     {{ previewText }}
@@ -131,15 +131,15 @@
 
       <div class="form-group">
         <div class="checkbox"><label><input type="checkbox" (change)="regenerateTextShotImage()" #includeSource> Include source</label></div>
-        <span *ngIf="includeSource.checked">
-          <input type="text" class="form-control" placeholder="Type or paste in a source">
+        <span [ngClass]="{hidden: !(includeSource.checked)}">
+          <input type="text" class="form-control" placeholder="Type or paste in a source" (keyup)="regenerateTextShotImage()" #textShotSource>
         </span>
       </div>
 
       <div class="form-group">
         <div class="checkbox"><label><input type="checkbox" (change)="regenerateTextShotImage()" #includeURL> Include URL</label></div>
-        <span *ngIf="includeURL.checked">
-          <input type="url" class="form-control" placeholder="Type or paste in a URL">
+        <span [ngClass]="{hidden: !(includeURL.checked)}">
+          <input type="url" class="form-control" placeholder="Type or paste in a URL" (keyup)="regenerateTextShotImage()" #textShotURL>
         </span>
       </div>
 
@@ -169,15 +169,15 @@
         {{ textShotTextArea.value }}
       </div>
 
-      <div class="textshot-source" *ngIf="includeSource.checked">
-        Created with TS - <span style="text-decoration: underline">http://j.mp/ts-textshots</span>
+      <div class="textshot-source" [ngClass]="{hidden: !(includeSource.checked)}">
+        {{ textShotSource.value }}
       </div>
 
-      <div class="textshot-url" *ngIf="includeURL.checked">
-        Created with TS - <span style="text-decoration: underline">http://j.mp/ts-textshots</span>
+      <div class="textshot-url" [ngClass]="{hidden: !(includeURL.checked)}">
+        {{ textShotURL.value }}
       </div>
 
-      <div class="created-with" *ngIf="includeCreatedWith.checked">
+      <div class="created-with" [ngClass]="{hidden: !(includeCreatedWith.checked)}">
         Created with TS - <span style="text-decoration: underline">http://j.mp/ts-textshots</span>
       </div>
 

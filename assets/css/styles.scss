@@ -83,6 +83,15 @@ $textshot-border-color: #2e2e2e;
   @include textshot-border;
 }
 
+.textshot-source {
+  font-size: 1.5rem;
+}
+
+.textshot-url {
+  font-size: 1rem;
+  text-decoration: underline;
+}
+
 .created-with {
   @extend .pull-right;
   font-size: 1.5rem;

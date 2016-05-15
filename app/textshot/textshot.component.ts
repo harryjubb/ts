@@ -78,6 +78,9 @@ export class TSTextShotComponent implements OnInit {
   textShotPNGUrl: string = "";
   textShotPNGOctetUrl: string = "";
   textShotPNGBlobUrl: string = "";
+  // textShotSource = null;
+  // textShotURL = null;
+
   previewText: string = "LIVE PREVIEW";
 
   onMobile: boolean = false;
