@@ -125,9 +125,23 @@
 
     <form class="form">
 
-      <div class="checkbox"><label><input type="checkbox"> Include "Made by TS"</label></div>
-      <div class="checkbox"><label><input type="checkbox"> Include source</label></div>
-      <div class="checkbox"><label><input type="checkbox"> Include URL</label></div>
+      <div class="form-group">
+        <div class="checkbox"><label><input type="checkbox" (change)="0" #includeMadeBy> Include "Made by TS"</label></div>
+      </div>
+
+      <div class="form-group">
+        <div class="checkbox"><label><input type="checkbox" (change)="0" #includeSource> Include source</label></div>
+        <span *ngIf="includeSource.checked">
+          <input type="text" class="form-control" placeholder="Type or paste in a source">
+        </span>
+      </div>
+
+      <div class="form-group">
+        <div class="checkbox"><label><input type="checkbox" (change)="0" #includeURL> Include URL</label></div>
+        <span *ngIf="includeURL.checked">
+          <input type="url" class="form-control" placeholder="Type or paste in a URL">
+        </span>
+      </div>
 
     </form>
 
@@ -143,7 +157,7 @@
     </div> -->
 
     <!-- <br /> -->
-    <br />
+    <!-- <br /> -->
 
   </div>
 
