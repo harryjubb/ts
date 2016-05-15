@@ -175,8 +175,12 @@
 
     </form>
 
-    <!-- TODO: BACKGROUND IMAGE SIZE, POSITION, OPACITY -->
-    <form class="form-inline add-images-form">
+    <!-- BACKGROUND IMAGE SIZE, POSITION, OPACITY -->
+    <form *ngIf="textShot.backgroundImageStyles['background-image'] !== 'none'" class="form-inline add-images-form">
+
+      <label>Background Image Settings</label>&nbsp;
+
+
 
     </form>
 
