@@ -116,6 +116,8 @@
 
   </div>
 
+  <!-- IMAGE UPLOAD -->
+
   <!-- ADVANCED SETTINGS -->
   <div [ngClass]="{hidden: !settingsShown}">
 
@@ -187,7 +189,7 @@
   </div>
 
   <!-- GENERATED TEXTSHOT IMAGE -->
-  <img [src]="textShotPNGUrl" [alt]="textShotText" class="textshot-img" *ngIf="textShotIsGenerated" />
+  <img [src]="textShotPNGUrl" [alt]="textShotText" class="textshot-img" *ngIf="textShotIsGenerated" rel="share" />
 
   <!-- <div id="textshot-div-hi-res" class="textshot-preview textshot-hidden-hi-res-div">
     {{ textShotTextArea.value }}
