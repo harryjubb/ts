@@ -62,6 +62,9 @@ System.config({
     "@angular/upgrade": {
       "main": "index.js",
       "defaultExtension": "js"
+    },
+    "angulartics2": {
+      "defaultExtension": "js"
     }
   },
 
