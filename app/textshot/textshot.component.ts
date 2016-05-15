@@ -221,17 +221,17 @@ export class TSTextShotComponent implements OnInit {
   generateTextShotImage () {
 
     this.textShotRun += 1;
-    console.log(this.textShotRun);
+    // console.log(this.textShotRun);
     this.textShotIsGenerated = false;
     this.previewText = "GENERATING IMAGE...";
 
-    console.log('Text is now "' + this.textShot.text + '"');
-    console.log('Style is now ' + JSON.stringify(this.textShot.styles));
+    // console.log('Text is now "' + this.textShot.text + '"');
+    // console.log('Style is now ' + JSON.stringify(this.textShot.styles));
 
     // JUST IN CASE
     // CATCH ANY CASE WHERE THERE'S NO TEXT
     if (this.textShot.text.trim() === '') {
-      console.log('Empty text');
+      // console.log('Empty text');
       return;
     }
 
@@ -243,7 +243,7 @@ export class TSTextShotComponent implements OnInit {
                 })
                 .then( function (canvas) {
 
-                  console.log(canvas);
+                  // console.log(canvas);
 
                   // CANVAS IS THE FINAL RENDERED <CANVAS> ELEMENT
                   base.previewText= "TEXTSHOT GENERATED!";
@@ -263,7 +263,7 @@ export class TSTextShotComponent implements OnInit {
   }
 
   downloadTextShotImage () {
-    console.log('Downloading...');
+    // console.log('Downloading...');
     var url = this.textShotPNGUrl.replace(/^data:image\/[^;]/, 'data:application/octet-stream');
     // var url = this.textShotPNGUrl;
     window.open(url);
@@ -312,7 +312,7 @@ export class TSTextShotComponent implements OnInit {
   }
 
   handleImageUpload (event) {
-    console.log('image changed')
+    // console.log('image changed')
 
     var file = event.target.files[0];
     var reader = new FileReader();
@@ -327,8 +327,8 @@ export class TSTextShotComponent implements OnInit {
     }, false);
 
     if (file) {
-      console.log('found file');
-      console.log(file);
+      // console.log('found file');
+      // console.log(file);
       reader.readAsDataURL(file);
     }
 
