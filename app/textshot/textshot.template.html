@@ -64,6 +64,7 @@
             type="button"
             class="btn btn-default style-toolbar-color-btn"
             style="border-top-right-radius: 5px; border-bottom-right-radius: 5px;"
+            (click)="showTextBackgroundHelp()"
             [(colorPicker)]="textShot.textBackgroundStyles['background-color']"
             [cpPosition]="'top'"
             [cpOutputFormat]="'rgba'"
@@ -134,6 +135,15 @@
 
   </div>
 
+  <!-- OPACITY HINT FOR TEXT BACKGROUND -->
+  <!-- ONLY SHOWN ONCE -->
+  <div style="margin-top: 0; margin-bottom: 5px;" class="text-center" [ngClass]="{hidden: !(textBackgroundHelpVisible)}">
+    <span class="text-info">
+      <i class="fa fa-info-circle" aria-hidden="true"></i>&nbsp;
+      For text background color, don't forget to change the opacity to see an effect!
+    </span>
+  </div>
+
   <!-- IMAGE UPLOAD -->
   <div class="add-images" [ngClass]="{hidden: !addImagesShown}">
 
@@ -162,6 +172,11 @@
       <button *ngIf="textShot.backgroundImageStyles['background-image'] !== 'none'" (click)="handleClearImage()" class="btn btn-danger">Clear</button>
 
       <!-- <input [ngFormControl]="textShotBgImageUrlInputControl" class="form-control" type="url" placeholder="From URL" /> -->
+
+    </form>
+
+    <!-- TODO: BACKGROUND IMAGE SIZE, POSITION, OPACITY -->
+    <form class="form-inline add-images-form">
 
     </form>
 

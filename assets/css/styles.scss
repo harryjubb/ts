@@ -389,6 +389,14 @@ $upload-drag-acceptor-base-padding: 5px;
   border-color: darken(#fff, 20%);
 }
 
+.bg-dark {
+  background-color: #000;
+  // padding: 2px;
+  border-radius: 2px;
+  border-width: 10px;
+  border-color: #000;
+}
+
 // TWEET
 $btn-tweet-bg: #00aced;
 $btn-tweet-border: darken($btn-tweet-bg, 5%);

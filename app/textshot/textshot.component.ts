@@ -97,6 +97,9 @@ export class TSTextShotComponent implements OnInit {
   // textShotSource = null;
   // textShotURL = null;
 
+  textBackgroundHelpFired: boolean = false;
+  textBackgroundHelpVisible: boolean = false;
+
   previewText: string = "LIVE PREVIEW";
 
   onMobile: boolean = false;
@@ -264,6 +267,22 @@ export class TSTextShotComponent implements OnInit {
 
   setTextAlignment (alignment: string) {
     this.textShot.styles['text-align'] = alignment;
+  }
+
+  showTextBackgroundHelp () {
+
+    if (!this.textBackgroundHelpFired) {
+      this.textBackgroundHelpFired = true;
+      this.textBackgroundHelpVisible = true;
+
+      var base = this;
+
+      window.setTimeout(() => {
+        base.textBackgroundHelpVisible = false;
+      }, 10000);
+
+    }
+
   }
 
   handleImageUpload (event) {
