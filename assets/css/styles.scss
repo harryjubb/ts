@@ -100,6 +100,15 @@ $textshot-border-color: #2e2e2e;
 //   // display: none;
 // }
 
+// COLOR PICKER
+
+.cp-cancel-button-class {
+  @extend .btn;
+  @extend .btn-danger;
+  // @include button-variant($btn-primary-color, $btn-danger-bg, $btn-danger-border);
+  // top: -70px;
+}
+
 // CUSTOM BUTTONS
 
 // TWEET
