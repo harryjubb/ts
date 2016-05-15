@@ -41,6 +41,8 @@ export class TSTextShotComponent implements OnInit {
       'background-color': 'rgba(255, 255, 255, 0)', // ENSURE TRANSPARENT COLOR BG FOR IMAGE
       'background-image': 'none',
       'background-size': 'cover',
+      'background-repeat': 'repeat',
+      'background-position': 'center',
       'opacity': '1'
     },
     'textBackgroundStyles': {
@@ -91,6 +93,27 @@ export class TSTextShotComponent implements OnInit {
     // '29pt',
     '30pt'
   ];
+
+  backgroundSizes: Array<string> = [
+    'cover',
+    'contain'
+  ];
+
+  backgroundRepeats: Array<string> = [
+    'repeat',
+    'repeat-x',
+    'repeat-y',
+    'no-repeat',
+  ];
+
+  backgroundPositions: Array<string> = [
+    'top',
+    'bottom',
+    'left',
+    'right',
+    'center'
+  ];
+
   textShotIsGenerated: boolean = false;
   textShotPNGUrl: string = "";
   textShotPNGOctetUrl: string = "";

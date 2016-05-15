@@ -182,11 +182,38 @@
       <label>Background Image Settings</label>&nbsp;
 
       <!-- SIZE -->
+      <div class="btn-group" role="group">
+        <button type="button" class="btn btn-default dropdown-toggle text-capitalize" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ textShot.backgroundImageStyles['background-size'] }} <i class="fa fa-caret-down" aria-hidden="true"></i></button>
+        <ul class="dropdown-menu">
+          <li *ngFor="let backgroundSize of backgroundSizes">
+            <a href="#" class="text-capitalize" (click)="textShot.backgroundImageStyles['background-size'] = backgroundSize ; regenerateTextShotImage()">{{ backgroundSize }}</a>
+          </li>
+        </ul>
+      </div>
 
+      &nbsp;
 
-      <!-- &nbsp; -->
+      <!-- REPEAT -->
+      <div class="btn-group" role="group">
+        <button type="button" class="btn btn-default dropdown-toggle text-capitalize" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ textShot.backgroundImageStyles['background-repeat'] }} <i class="fa fa-caret-down" aria-hidden="true"></i></button>
+        <ul class="dropdown-menu">
+          <li *ngFor="let backgroundRepeat of backgroundRepeats">
+            <a href="#" class="text-capitalize" (click)="textShot.backgroundImageStyles['background-repeat'] = backgroundRepeat ; regenerateTextShotImage()">{{ backgroundRepeat }}</a>
+          </li>
+        </ul>
+      </div>
+
+      &nbsp;
 
       <!-- POSITION -->
+      <div class="btn-group" role="group">
+        <button type="button" class="btn btn-default dropdown-toggle text-capitalize" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ textShot.backgroundImageStyles['background-position'] }} <i class="fa fa-caret-down" aria-hidden="true"></i></button>
+        <ul class="dropdown-menu">
+          <li *ngFor="let backgroundPosition of backgroundPositions">
+            <a href="#" class="text-capitalize" (click)="textShot.backgroundImageStyles['background-position'] = backgroundPosition ; regenerateTextShotImage()">{{ backgroundPosition }}</a>
+          </li>
+        </ul>
+      </div>
 
       <!-- &nbsp; -->
 
