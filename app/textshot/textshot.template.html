@@ -94,6 +94,16 @@
         <button (click)="setTextAlignment('justify') ; regenerateTextShotImage()" [ngClass]="{active: textShot.styles['text-align'] === 'justify'}" type="button" class="btn btn-default"><i class="fa fa-align-justify" aria-hidden="true"></i></button>
       </div>
 
+      <!-- IMAGES -->
+      <div class="btn-group style-toolbar-btn-group" role="group" aria-label="Text Alignment">
+        <button type="button" class="btn btn-default"><i class="fa fa-picture-o" aria-hidden="true"></i></button>
+      </div>
+
+      <!-- SETTINGS -->
+      <div class="btn-group style-toolbar-btn-group pull-right" role="group" aria-label="Text Alignment">
+        <button type="button" class="btn btn-default"><i class="fa fa-cog" aria-hidden="true"></i></button>
+      </div>
+
       <!-- SAVE DEFAULTS -->
       <!-- <div class="btn-group style-toolbar-btn-group" role="group" aria-label="Save Defaults">
         <button type="button" class="btn btn-success"><span class="glyphicon glyphicon-save-file" aria-hidden="true"></span> Save Settings</button>

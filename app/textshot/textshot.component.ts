@@ -89,7 +89,19 @@ export class TSTextShotComponent implements OnInit {
   constructor (
     private _device: DeviceTypeDetectService
   ) {
+
     this.onMobile = this._device.device.is_mobile;
+
+    var base = this;
+
+    // HANDLE WINDOW RESIZE
+    // window.onresize = () => {
+    //   if (this.timeoutID) window.clearTimeout(this.timeoutID);
+    //   this.timeoutID = window.setTimeout(() => {
+    //     base.regenerateTextShotImage();
+    //   }, 100);
+    // };
+
   }
 
   ngOnInit () {
