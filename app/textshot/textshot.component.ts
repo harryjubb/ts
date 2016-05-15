@@ -78,7 +78,7 @@ export class TSTextShotComponent implements OnInit {
   textShotPNGUrl: string = "";
   textShotPNGOctetUrl: string = "";
   textShotPNGBlobUrl: string = "";
-  previewText: string = "PREVIEW";
+  previewText: string = "LIVE PREVIEW";
 
   onMobile: boolean = false;
 
@@ -128,7 +128,7 @@ export class TSTextShotComponent implements OnInit {
   textShotTextAreaWasChanged () {
 
     this.textShotIsGenerated = false;
-    this.previewText = "PREVIEW";
+    this.previewText = "LIVE PREVIEW";
 
   }
 
