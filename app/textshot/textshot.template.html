@@ -137,7 +137,7 @@
 
   <!-- OPACITY HINT FOR TEXT BACKGROUND -->
   <!-- ONLY SHOWN ONCE -->
-  <div style="margin-top: 0; margin-bottom: 5px;" class="text-center" [ngClass]="{hidden: !(textBackgroundHelpVisible)}">
+  <div style="margin-top: 5px; margin-bottom: 10px;" class="text-center" [ngClass]="{hidden: !(textBackgroundHelpVisible), animated: textBackgroundHelpVisible, rubberBand: textBackgroundHelpVisible}" style="-webkit-animation-delay: 2s; animation-delay: 2s;">
     <span class="text-info">
       <i class="fa fa-info-circle" aria-hidden="true"></i>&nbsp;
       For text background color, don't forget to change the opacity to see an effect!
@@ -180,7 +180,9 @@
 
       <label>Background Image Settings</label>&nbsp;
 
-
+      Opacity &nbsp; <input (change)="textShot.backgroundImageStyles['opacity'] = backgroundImageOpacitySlider.value ; regenerateTextShotImage()" style="display: inline-block; width: 50px;" type="range" min="0" max="1" step ="0.05" value="1" #backgroundImageOpacitySlider />
+      &nbsp;
+      {{ backgroundImageOpacitySlider.value }}
 
     </form>
 

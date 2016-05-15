@@ -317,4 +317,9 @@ export class TSTextShotComponent implements OnInit {
 
   }
 
+  log (value) {
+    console.log(value);
+    console.log(typeof(value));
+  }
+
 }
