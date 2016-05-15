@@ -235,7 +235,7 @@ $created-with-font-size: 1.5rem;
   position: relative;
 }
 
-.textshot-background {
+.textshot-background-color {
   position:absolute;
 	left:0;
 	right:0;
@@ -244,9 +244,18 @@ $created-with-font-size: 1.5rem;
 	z-index:1;
 }
 
+.textshot-background {
+  position:absolute;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+	z-index:2;
+}
+
 .textshot-content {
   position:relative;
-	z-index:2;
+	z-index:3;
   display: flex;
   flex: 1;
   flex-direction: column;

@@ -58,19 +58,19 @@
         </button>
 
         <!-- TEXTSHOT BACKGROUND COLOR -->
-        <!-- INLINE STYLE HAD TO BE HACKED IN BECAUSE FOR SOME REASON -->
+        <!-- INLINE BUTTON STYLE HAD TO BE HACKED IN BECAUSE FOR SOME REASON -->
         <!-- COLORPICKER SEEMS TO HAVE BROKEN ROUNDED CORNERS -->
         <button
             type="button"
             class="btn btn-default"
             style="border-top-right-radius: 5px; border-bottom-right-radius: 5px;"
-            [(colorPicker)]="textShot.styles['background-color']"
+            [(colorPicker)]="textShot.backgroundColorStyles['background-color']"
             [cpPosition]="'top'"
             [cpOutputFormat]="'rgba'"
             [cpCancelButton]="true"
             [cpHeight]="'315px'"
             (colorPickerChange)="regenerateTextShotImage()">
-          <span class="glyphicon glyphicon-text-background" [ngClass]="{'bg-dark-white': tinyColor(textShot.styles['background-color']).getLuminance() >= 0.75}" [ngStyle]="{color: textShot.styles['background-color']}" aria-hidden="true"></span>&nbsp;<i class="fa fa-caret-down" style='color: black;' aria-hidden="true"></i>
+          <span class="glyphicon glyphicon-text-background" [ngClass]="{'bg-dark-white': tinyColor(textShot.backgroundColorStyles['background-color']).getLuminance() >= 0.75}" [ngStyle]="{color: textShot.backgroundColorStyles['background-color']}" aria-hidden="true"></span>&nbsp;<i class="fa fa-caret-down" style='color: black;' aria-hidden="true"></i>
         </button>
 
       </div>
@@ -141,7 +141,7 @@
 
       &nbsp;
 
-      <button *ngIf="textShot.styles['background-image'] !== 'none'" (click)="handleClearImage()" class="btn btn-danger">Clear</button>
+      <button *ngIf="textShot.backgroundImageStyles['background-image'] !== 'none'" (click)="handleClearImage()" class="btn btn-danger">Clear</button>
 
       <!-- <input [ngFormControl]="textShotBgImageUrlInputControl" class="form-control" type="url" placeholder="From URL" /> -->
 
@@ -200,7 +200,8 @@
   <div class="textshot-preview-container" [ngClass]="{'hidden': textShotIsGenerated}">
     <div id="textshot-div" class="textshot-preview" [ngStyle]="textShot.styles">
 
-      <div class="textshot-background" [ngStyle]="textShot.backgroundStyles"></div>
+      <div class="textshot-background-color" [ngStyle]="textShot.backgroundColorStyles"></div>
+      <div class="textshot-background" [ngStyle]="textShot.backgroundImageStyles"></div>
       <div class="textshot-content">
         <div class="textshot-text">
           {{ textShotTextArea.value }}

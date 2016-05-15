@@ -33,16 +33,14 @@ export class TSTextShotComponent implements OnInit {
       'text-decoration': 'none',
       'text-align': 'left'
     },
-    'backgroundStyles': {
-      'background-color': 'none', // '#fff',
-      'background-image': 'url("http://www.planwallpaper.com/static/images/colorful-triangles-background_yB0qTG6.jpg")',
+    'backgroundColorStyles': {
+      'background-color': '#fff', // '#fff',
+    }
+    'backgroundImageStyles': {
+      'background-color': 'rgba(255, 255, 255, 0)', // ENSURE TRANSPARENT COLOR BG FOR IMAGE
+      'background-image': 'none',
       'background-size': 'cover',
-      '-webkit-filter': 'blur(0px)',
-      '-moz-filter': 'blur(0px)',
-      '-o-filter': 'blur(0px)',
-      '-ms-filter': 'blur(0px)',
-      'filter': 'blur(0px)'
-
+      'opacity': '1'
     }
   };
   fontFamilies: Array<string> = [
@@ -273,7 +271,7 @@ export class TSTextShotComponent implements OnInit {
     reader.addEventListener("load", function () {
       base.bgImageDataURL = reader.result;
       // console.log(base.bgImageDataURL);
-      base.textShot.styles['background-image'] = 'url("' + base.bgImageDataURL + '")';
+      base.textShot.backgroundImageStyles['background-image'] = 'url("' + base.bgImageDataURL + '")';
       base.regenerateTextShotImage();
     }, false);
 
@@ -287,8 +285,8 @@ export class TSTextShotComponent implements OnInit {
 
   handleClearImage () {
 
-    if (this.textShot.styles['background-image'] !== 'none') {
-      this.textShot.styles['background-image'] = 'none';
+    if (this.textShot.backgroundImageStyles['background-image'] !== 'none') {
+      this.textShot.backgroundImageStyles['background-image'] = 'none';
       this.regenerateTextShotImage();
     }
 
