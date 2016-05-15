@@ -70,7 +70,7 @@
             [cpCancelButton]="true"
             [cpHeight]="'315px'"
             (colorPickerChange)="regenerateTextShotImage()">
-          <i class="fa fa-square" [ngClass]="{'bg-dark-white': tinyColor(textShot.textBackgroundStyles['background-color']).getLuminance() >= 0.75}" [ngStyle]="{color: textShot.textBackgroundStyles['background-color']}" aria-hidden="true"></i>&nbsp;<i class="fa fa-caret-down" style='color: black;' aria-hidden="true"></i>
+          <span class="glyphicon glyphicon-text-background" [ngClass]="{'bg-dark-white': tinyColor(textShot.textBackgroundStyles['background-color']).getLuminance() >= 0.75}" [ngStyle]="{color: textShot.textBackgroundStyles['background-color']}" aria-hidden="true"></span>&nbsp;<i class="fa fa-caret-down" style='color: black;' aria-hidden="true"></i>
         </button>
 
       </div>
