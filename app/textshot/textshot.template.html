@@ -57,22 +57,6 @@
           <span class="glyphicon glyphicon-text-color" [ngClass]="{'bg-dark-white': tinyColor(textShot.styles.color).getLuminance() >= 0.75}" [ngStyle]="{color: textShot.styles.color}" aria-hidden="true"></span>&nbsp;<i class="fa fa-caret-down" style='color: black;' aria-hidden="true"></i>
         </button>
 
-        <!-- TEXTSHOT BACKGROUND COLOR -->
-        <!-- INLINE BUTTON STYLE HAD TO BE HACKED IN BECAUSE FOR SOME REASON -->
-        <!-- COLORPICKER SEEMS TO HAVE BROKEN ROUNDED CORNERS -->
-        <button
-            type="button"
-            class="btn btn-default"
-            style="border-top-right-radius: 5px; border-bottom-right-radius: 5px;"
-            [(colorPicker)]="textShot.backgroundColorStyles['background-color']"
-            [cpPosition]="'top'"
-            [cpOutputFormat]="'rgba'"
-            [cpCancelButton]="true"
-            [cpHeight]="'315px'"
-            (colorPickerChange)="regenerateTextShotImage()">
-          <span class="glyphicon glyphicon-text-background" [ngClass]="{'bg-dark-white': tinyColor(textShot.backgroundColorStyles['background-color']).getLuminance() >= 0.75}" [ngStyle]="{color: textShot.backgroundColorStyles['background-color']}" aria-hidden="true"></span>&nbsp;<i class="fa fa-caret-down" style='color: black;' aria-hidden="true"></i>
-        </button>
-
       </div>
 
       <!-- FONT STROKE/STROKE COLOR -->
@@ -97,9 +81,27 @@
         <button (click)="setTextAlignment('justify') ; regenerateTextShotImage()" [ngClass]="{active: textShot.styles['text-align'] === 'justify'}" type="button" class="btn btn-default"><i class="fa fa-align-justify" aria-hidden="true"></i></button>
       </div>
 
-      <!-- IMAGES -->
+      <!-- IMAGES AND BACKGROUND COLOR -->
       <div class="btn-group style-toolbar-btn-group" role="group" aria-label="Text Alignment">
+
         <button (click)="addImagesShown = !addImagesShown" [ngClass]="{active: addImagesShown}" type="button" class="btn btn-default"><i class="fa fa-picture-o" aria-hidden="true"></i></button>
+
+        <!-- TEXTSHOT BACKGROUND COLOR -->
+        <!-- INLINE BUTTON STYLE HAD TO BE HACKED IN BECAUSE FOR SOME REASON -->
+        <!-- COLORPICKER SEEMS TO HAVE BROKEN ROUNDED CORNERS -->
+        <button
+            type="button"
+            class="btn btn-default"
+            style="border-top-right-radius: 5px; border-bottom-right-radius: 5px;"
+            [(colorPicker)]="textShot.backgroundColorStyles['background-color']"
+            [cpPosition]="'top'"
+            [cpOutputFormat]="'rgba'"
+            [cpCancelButton]="true"
+            [cpHeight]="'315px'"
+            (colorPickerChange)="regenerateTextShotImage()">
+          <i class="fa fa-square" [ngClass]="{'bg-dark-white': tinyColor(textShot.backgroundColorStyles['background-color']).getLuminance() >= 0.75}" [ngStyle]="{color: textShot.backgroundColorStyles['background-color']}" aria-hidden="true"></i>&nbsp;<i class="fa fa-caret-down" style='color: black;' aria-hidden="true"></i>
+        </button>
+
       </div>
 
       <!-- SETTINGS -->
