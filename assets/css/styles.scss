@@ -71,30 +71,64 @@ $textshot-border-color: #2e2e2e;
   padding-top: $textshot-padding-base;
 }
 
+$extras-top-padding: 0.5rem;
+$extras-between-padding: 1rem;
+$textshot-source-font-size: 2rem;
+$textshot-url-font-size: 1.5rem;
+$created-with-font-size: 1.5rem;
+
 .textshot-preview-container {
   @include textshot-border;
+  width: 100%;
 }
 
 .textshot-preview {
   @include textshot;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  width: 100%;
+}
+
+.textshot-text {
+  flex-grow: 1;
+  width: 100%;
+}
+
+.textshot-extras {
+  // bottom: $textshot-padding-base;
+  padding-top: $extras-top-padding;
+  width: 100%;
 }
 
 .textshot-img {
   @include textshot-border;
+  width: 100%;
+  // image-rendering: optimizeSpeed;             /* STOP SMOOTHING, GIVE ME SPEED  */
+  // image-rendering: -moz-crisp-edges;          /* Firefox                        */
+  // image-rendering: -o-crisp-edges;            /* Opera                          */
+  // image-rendering: -webkit-optimize-contrast; /* Chrome (and eventually Safari) */
+  // image-rendering: pixelated; /* Chrome */
+  // image-rendering: optimize-contrast;         /* CSS3 Proposed                  */
+  // -ms-interpolation-mode: nearest-neighbor;   /* IE8+                           */
 }
 
 .textshot-source {
-  font-size: 1.5rem;
+  font-size: $textshot-source-font-size;
+  text-align: left;
+  padding-top: $extras-between-padding;
 }
 
 .textshot-url {
-  font-size: 1rem;
+  font-size: $textshot-url-font-size;
   text-decoration: underline;
+  text-align: left;
+  padding-top: $extras-between-padding;
 }
 
 .created-with {
-  @extend .pull-right;
-  font-size: 1.5rem;
+  font-size: $created-with-font-size;
+  text-align: right;
 }
 
 // $textshot-hi-res-factor: 3;
