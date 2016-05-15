@@ -101,7 +101,7 @@
 
       <!-- SETTINGS -->
       <div class="btn-group style-toolbar-btn-group pull-right" role="group" aria-label="Text Alignment">
-        <button type="button" class="btn btn-default"><i class="fa fa-cog" aria-hidden="true"></i></button>
+        <button (click)="settingsShown = !settingsShown" [ngClass]="{active: settingsShown}" type="button" class="btn btn-default"><i class="fa fa-cog" aria-hidden="true"></i></button>
       </div>
 
       <!-- SAVE DEFAULTS -->
@@ -110,6 +110,37 @@
       </div> -->
 
     </div>
+
+  </div>
+
+  <!-- ADVANCED SETTINGS -->
+  <div *ngIf="settingsShown">
+
+    <!-- <br /> -->
+
+    <h4>Advanced Settings</h4>
+
+    <form class="form">
+
+      <div class="checkbox"><label><input type="checkbox"> Include "Made by TS"</label></div>
+      <div class="checkbox"><label><input type="checkbox"> Include source</label></div>
+      <div class="checkbox"><label><input type="checkbox"> Include URL</label></div>
+
+    </form>
+
+    <!-- Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus nulla commodi minus ratione officia fugiat! Ullam at, porro veniam magni. Ut modi impedit consequuntur ex cumque quisquam nam reiciendis voluptates. -->
+
+    <!-- <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Panel title</h3>
+      </div>
+      <div class="panel-body">
+        Panel content
+      </div>
+    </div> -->
+
+    <!-- <br /> -->
+    <br />
 
   </div>
 

@@ -82,6 +82,8 @@ export class TSTextShotComponent implements OnInit {
 
   onMobile: boolean = false;
 
+  settingsShown: boolean = false;
+
   timeoutID = null;
 
   tinyColor = tinycolor;
