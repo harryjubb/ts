@@ -19,6 +19,7 @@ declare var tinycolor: any;
 export class TSTextShotComponent implements OnInit {
 
   textShotInputControl = new Control();
+  textShotRun: number = -1;
   // textShotBgImageUrlInputControl = new Control();
   textShot: Object = {
     'text': '',
@@ -196,6 +197,8 @@ export class TSTextShotComponent implements OnInit {
 
   generateTextShotImage () {
 
+    this.textShotRun += 1;
+    console.log(this.textShotRun);
     this.textShotIsGenerated = false;
     this.previewText = "GENERATING IMAGE...";
 

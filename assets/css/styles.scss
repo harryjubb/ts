@@ -158,6 +158,10 @@ $brand-primary: darken(#3f007e, 3%);
   // font-family: Merriweather;
 }
 
+.help-button-icon {
+  color: darken($brand-primary, 5%);
+}
+
 .tagline {
   font-size: 1.75em;
 }
