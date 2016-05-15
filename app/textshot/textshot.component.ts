@@ -22,7 +22,7 @@ export class TSTextShotComponent implements OnInit {
   textShot: Object = {
     'text': '',
     'styles': {
-      'font-family': 'Arial',
+      'font-family': 'Merriweather',
       'font-size': '24pt',
       'color': '#000',
       'background-color': '#fff',
@@ -34,6 +34,7 @@ export class TSTextShotComponent implements OnInit {
     }
   };
   fontFamilies: Array<string> = [
+    'Merriweather',
     'Arial',
     'Helvetica',
     'Times New Roman',
@@ -41,7 +42,6 @@ export class TSTextShotComponent implements OnInit {
     'Open Sans',
     'Oswald',
     'Raleway',
-    'Merriweather',
     'Indie Flower',
     'Bitter',
     'Dosis',
