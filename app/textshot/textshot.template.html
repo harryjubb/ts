@@ -99,7 +99,7 @@
 
       <!-- IMAGES -->
       <div class="btn-group style-toolbar-btn-group" role="group" aria-label="Text Alignment">
-        <button type="button" class="btn btn-default"><i class="fa fa-picture-o" aria-hidden="true"></i></button>
+        <button (click)="addImagesShown = !addImagesShown" [ngClass]="{active: addImagesShown}" type="button" class="btn btn-default"><i class="fa fa-picture-o" aria-hidden="true"></i></button>
       </div>
 
       <!-- SETTINGS -->
@@ -117,6 +117,35 @@
   </div>
 
   <!-- IMAGE UPLOAD -->
+  <div class="add-images" [ngClass]="{hidden: !addImagesShown}">
+
+    <!-- <br /> -->
+
+    <h4>Add Images</h4>
+
+    <form class="form-inline add-images-form">
+
+      <label>Background Image</label>&nbsp;
+
+      <span class="btn btn-default btn-file" (mouseenter)="showImageUploadDisclaimer = true">
+        <i class="fa fa-upload" aria-hidden="true"></i> <span *ngIf="!onMobile">Upload Image</span> <span *ngIf="onMobile">Choose Image</span> <input type="file" accept="image/*" (change)="handleImageUpload($event)">
+      </span>
+
+      <span *ngIf="!onMobile">
+        &nbsp;or&nbsp;
+
+        <div class="upload-drag-acceptor" (mouseenter)="showImageUploadDisclaimer = true">
+          Drag and drop image or image file here
+        </div>
+      </span>
+
+      <!-- <input [ngFormControl]="textShotBgImageUrlInputControl" class="form-control" type="url" placeholder="From URL" /> -->
+
+    </form>
+
+    <span [ngClass]="{hidden: !(showImageUploadDisclaimer)}" class="text-warning">&nbsp;<i class="fa fa-exclamation-circle" aria-hidden="true"></i> Please ensure that you have permission to use any images.</span>
+
+  </div>
 
   <!-- ADVANCED SETTINGS -->
   <div [ngClass]="{hidden: !settingsShown}">

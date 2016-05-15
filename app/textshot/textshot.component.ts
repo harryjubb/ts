@@ -19,6 +19,7 @@ declare var tinycolor: any;
 export class TSTextShotComponent implements OnInit {
 
   textShotInputControl = new Control();
+  // textShotBgImageUrlInputControl = new Control();
   textShot: Object = {
     'text': '',
     'styles': {
@@ -91,13 +92,19 @@ export class TSTextShotComponent implements OnInit {
 
   tinyColor = tinycolor;
 
+  showImageUploadDisclaimer: boolean = false;
+  bgImageDataURL: string = undefined;
+
+  // _validImageURL = /(https?:\/\/.*\.(?:png|jpg|jpeg|gif))/i;
+  // imageURLIsValid: boolean = false;
+
   constructor (
     private _device: DeviceTypeDetectService
   ) {
 
     this.onMobile = this._device.device.is_mobile;
 
-    var base = this;
+    // var base = this;
 
     // HANDLE WINDOW RESIZE
     // window.onresize = () => {
@@ -127,6 +134,24 @@ export class TSTextShotComponent implements OnInit {
                           }
 
                         });
+
+    // this.textShotBgImageUrlInputControl.valueChanges
+    //                                    .debounceTime(1000)
+    //                                    .subscribe(text => {
+    //                                      console.log('changed');
+    //
+    //
+    //
+    //                                      // CHECK FOR VALID REGEX
+    //                                      if (this._validImageURL.test(text)) {
+    //                                        console.log('valid');
+    //                                        this.textShot.styles['background-image'] = 'url("' + text + '")';
+    //
+    //                                      } else {
+    //                                        console.log('invalid')
+    //                                      }
+    //
+    //                                    });
 
   }
 
@@ -169,7 +194,9 @@ export class TSTextShotComponent implements OnInit {
     var base = this;
 
     // GENERATE IMAGE
-    html2canvas(document.getElementById('textshot-div'), {})
+    html2canvas(document.getElementById('textshot-div'), {
+                  useCORS: true
+                })
                 .then( function (canvas) {
 
                   console.log(canvas);
@@ -222,6 +249,29 @@ export class TSTextShotComponent implements OnInit {
 
   setTextAlignment (alignment: string) {
     this.textShot.styles['text-align'] = alignment;
+  }
+
+  handleImageUpload (event) {
+    console.log('image changed')
+
+    var file = event.target.files[0];
+    var reader = new FileReader();
+
+    var base = this;
+
+    reader.addEventListener("load", function () {
+      base.bgImageDataURL = reader.result;
+      // console.log(base.bgImageDataURL);
+      base.textShot.styles['background-image'] = 'url("' + base.bgImageDataURL + '")';
+      base.regenerateTextShotImage();
+    }, false);
+
+    if (file) {
+      console.log('found file');
+      console.log(file);
+      reader.readAsDataURL(file);
+    }
+
   }
 
 }
