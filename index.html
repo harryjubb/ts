@@ -33,8 +33,10 @@
     <meta name="theme-color" content="#ffffff">
 
     <!-- ENABLE THE HOMESCREEN APP ON MOBILE DEVICES -->
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="mobile-web-app-capable" content="yes" />
+    <!-- DISABLED BECAUSE SAVING IMAGES DOESN'T WORK IN IT! -->
+    <!-- <meta name="apple-mobile-web-app-capable" content="yes" /> -->
+    <!-- <meta name="mobile-web-app-capable" content="yes" /> -->
+
     <!-- <meta name="apple-mobile-web-app-status-bar-style" content="black" /> -->
 
     <!-- ENABLE THE APP ICON -->
@@ -42,6 +44,13 @@
     <!-- <link rel="apple-touch-startup-image" href="http://ourURL/images/iPhoneStartup.png"> -->
     <!-- <meta name="viewport" content="width=device-width" /> -->
     <!-- <meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, height=device-height, width=device-width, shrink-to-fit=no" /> -->
+
+    <!-- MOBILE BOOKMARK PROMPT -->
+    <link rel="stylesheet" type="text/css" href="assets/css/addtohomescreen.css">
+    <script src="assets/js/addtohomescreen.min.js"></script>
+    <script>
+      addToHomescreen();
+    </script>
 
     <title>TS - Create Beautiful TextShots</title>
 
@@ -52,10 +61,10 @@
     <!-- Polyfill(s) for older browsers -->
 
     <!-- FROM NODE_MODULES -->
-    <script src="node_modules/es6-shim/es6-shim.min.js"></script>
+    <!-- <script src="node_modules/es6-shim/es6-shim.min.js"></script>
     <script src="node_modules/zone.js/dist/zone.min.js"></script>
     <script src="node_modules/reflect-metadata/Reflect.js"></script>
-    <script src="node_modules/systemjs/dist/system.js"></script>
+    <script src="node_modules/systemjs/dist/system.js"></script> -->
 
     <!-- UNMINIFIED VERSIONS -->
     <!-- <script src="node_modules/zone.js/dist/zone.js"></script> -->
@@ -72,10 +81,10 @@
     <!-- <script src="assets/js/copies/system.src.js"></script> -->
 
     <!-- CDN LIBRARIES -->
-    <!-- <script src="https://rumblex.s3.amazonaws.com/starter/es6-shim/es6-shim.min.js"></script>
+    <script src="https://rumblex.s3.amazonaws.com/starter/es6-shim/es6-shim.min.js"></script>
     <script src="https://rumblex.s3.amazonaws.com/starter/zone.js/dist/zone.js"></script>
     <script src="https://rumblex.s3.amazonaws.com/starter/reflect-metadata/Reflect.js"></script>
-    <script src="https://rumblex.s3.amazonaws.com/starter/rxjs/bundles/Rx.umd.js"></script> -->
+    <script src="https://rumblex.s3.amazonaws.com/starter/rxjs/bundles/Rx.umd.js"></script>
 
     <!-- SYSTEMJS NOT NEEDED IF USING SFX BUNDLE BELOW -->
     <!-- <script src="https://rumblex.s3.amazonaws.com/starter/systemjs/dist/system.js"></script> -->
@@ -98,15 +107,15 @@
     <!-- 2. Configure SystemJS -->
     <!-- USE WITH NODE_MODULE IMPORTS -->
     <!-- BUT NOT COMPLETE BUNDLE -->
-    <script src="systemjs.config.js"></script>
+    <!-- <script src="systemjs.config.js"></script>
     <script>
       System.import('app').catch(function(err){ console.error(err); });
-    </script>
+    </script> -->
 
     <!-- COMPLETE BUNDLE -->
     <!-- USE WITH CDN LIBRARIES -->
     <!-- RUN jspm bundle-sfx app assets/js/main.sfx.min.js --minify -->
-    <!-- <script src="assets/js/main.sfx.min.js"></script> -->
+    <script src="assets/js/main.sfx.min.js"></script>
 
     <!-- JQUERY JS FROM CDN -->
     <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
