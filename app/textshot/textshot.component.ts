@@ -43,7 +43,9 @@ export class TSTextShotComponent implements OnInit {
       'opacity': '1'
     },
     'textBackgroundStyles': {
-      'background-color': 'rgba(255, 255, 255, 0)'
+      'background-color': 'rgba(255, 255, 255, 0)',
+      'padding': '5px',
+      'border-radius': '5px'
       // 'background-color': '#f00'
     }
   };
