@@ -80,6 +80,8 @@ export class TSTextShotComponent implements OnInit {
 
   onMobile: boolean = false;
 
+  timeoutID = null;
+
   constructor (
     private _device: DeviceTypeDetectService
   ) {
@@ -121,7 +123,8 @@ export class TSTextShotComponent implements OnInit {
 
     // MANUAL DEBOUNCE DELAY
     // A BIT HACKY(!)
-    window.setTimeout(function () {
+    if (this.timeoutID) window.clearTimeout(this.timeoutID);
+    this.timeoutID = window.setTimeout(() => {
       base.generateTextShotImage();
     }, 100);
 
