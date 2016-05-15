@@ -24,8 +24,8 @@ export class TSTextShotComponent implements OnInit {
     'styles': {
       'font-family': 'Arial',
       'font-size': '24pt',
-      'color': 'black',
-      'background-color': '#b2aae6',
+      'color': '#000',
+      'background-color': '#fff',
       'background-image': 'none',
       'font-weight': 'normal',
       'font-style': 'normal',
